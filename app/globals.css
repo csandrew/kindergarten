@@ -1,26 +1,76 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --primary: #2f3e46;
+    --secondary: #84a98c;
+    --accent: #cad2c5;
+    --deep-burgundy: #800e13;
+    --darker-burgundy: #640d14;
+    --white: #ffffff;
+    --off-white: #e5e5e5;
+    --black: #000000;
+    
+    --facebook: #1877f2;
+    --x: #1da1f2;
+    --instagram: #e4405f;
+    --linkedin: #0a66c2;
+    --youtube: #ff0000;
+    --tiktok: #000000;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-inter, system-ui, -apple-system, sans-serif);
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins, system-ui, -apple-system, sans-serif);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--deep-burgundy));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

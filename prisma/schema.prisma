@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  
+}
+
+model ContactSubmission {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id          Int      @id @default(autoincrement())
+  name        String
+  childName   String?
+  content     String
+  rating      Int      @default(5)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Enrollment {
+  id                Int      @id @default(autoincrement())
+  childName         String
+  childAge          Int
+  parentName        String
+  parentEmail       String
+  parentPhone       String
+  program           String   // Playgroup, Nursery, Pre-K, Kindergarten
+  preferredStartDate DateTime
+  message           String?
+  status            String   @default("pending") // pending, contacted, enrolled
+  createdAt         DateTime @default(now())
+}
+
+model PrincipalMessage {
+  id        Int      @id @default(autoincrement())
+  content   String
+  name      String
+  title     String
+  imageUrl  String
+  updatedAt DateTime @updatedAt
+}
+
+model SiteContent {
+  id         Int      @id @default(autoincrement())
+  section    String   @unique
+  content    String   // JSON string
+  updatedAt  DateTime @updatedAt
+}
