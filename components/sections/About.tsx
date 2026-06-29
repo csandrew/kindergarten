@@ -2,14 +2,20 @@
 import Image from 'next/image'
 import { Shield, Users, Heart, Calendar, GraduationCap, Eye, Target } from 'lucide-react'
 
+// Constants
+const CONFIG = {
+  startYear: 2010,
+  avgChildrenPerYear: 50
+}
+
 export default function About() {
-  // Calculate years served (starting from 2010)
-  const startYear = 2010
+  // Calculate years served
+  const startYear = CONFIG.startYear
   const currentYear = new Date().getFullYear()
   const yearsServed = currentYear - startYear
   
-  // Number of children trained (average 50 children per year)
-  const childrenTrained = yearsServed * 50 + 25
+  // Calculate children trained (more realistic calculation)
+  const childrenTrained = yearsServed * CONFIG.avgChildrenPerYear + 25
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -25,21 +31,21 @@ export default function About() {
         {/* Statistics Banner */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-            <Calendar className="w-12 h-12 mx-auto mb-3 text-white/90" />
+            <Calendar className="w-12 h-12 mx-auto mb-3 text-white/90" aria-hidden="true" />
             <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{yearsServed}+</div>
             <p className="text-lg font-semibold">Years of Excellence</p>
             <p className="text-white/80 text-sm mt-2">Serving our community since {startYear}</p>
           </div>
           
           <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-            <GraduationCap className="w-12 h-12 mx-auto mb-3 text-white/90" />
-            <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{childrenTrained}+</div>
+            <GraduationCap className="w-12 h-12 mx-auto mb-3 text-white/90" aria-hidden="true" />
+            <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{childrenTrained.toLocaleString()}+</div>
             <p className="text-lg font-semibold">Children Nurtured</p>
             <p className="text-white/80 text-sm mt-2">Young minds shaped for success</p>
           </div>
 
           <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-            <Users className="w-12 h-12 mx-auto mb-3 text-white/90" />
+            <Users className="w-12 h-12 mx-auto mb-3 text-white/90" aria-hidden="true" />
             <div className="text-4xl md:text-5xl font-heading font-bold mb-2">100%</div>
             <p className="text-lg font-semibold">Transition Rate</p>
             <p className="text-white/80 text-sm mt-2">Trusted by our community</p>
@@ -70,15 +76,26 @@ export default function About() {
             </p>
           </div>
           
-          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
             <Image
               src="/images/about/classroom.jpg"
-              alt="Children learning in classroom"
+              alt="Children learning in a bright, engaging classroom environment"
               fill
               className="object-cover hover:scale-105 transition duration-500"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+              sizes="(max-width: 768px) 100vw, 50vw"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = 'https://placehold.co/800x600/2f3e46/white?text=Classroom+Learning';
+                target.style.display = 'none';
+                // Show fallback div
+                const parent = target.parentElement;
+                if (parent) {
+                  const fallback = document.createElement('div');
+                  fallback.className = 'w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-heading text-xl';
+                  fallback.textContent = 'Classroom Learning';
+                  parent.appendChild(fallback);
+                }
               }}
             />
           </div>
@@ -87,18 +104,18 @@ export default function About() {
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-gradient-to-br from-primary/5 to-secondary/10 p-8 rounded-2xl hover:shadow-lg transition">
-            <div className="text-5xl mb-4"><Eye className="w-12 h-12 mx-auto mb-3 text-primary" /></div>
-            <h3 className="text-2xl font-heading font-bold text-primary mb-3">Our Vision</h3>
-            <p className="text-gray-700 leading-relaxed">
+            <Eye className="w-12 h-12 mx-auto mb-3 text-primary" aria-hidden="true" />
+            <h3 className="text-2xl font-heading font-bold text-primary mb-3 text-center">Our Vision</h3>
+            <p className="text-gray-700 leading-relaxed text-center">
               To be a leading center of excellence in early childhood education, nurturing confident,
               creative, and responsible learners.
             </p>
           </div>
           
           <div className="bg-gradient-to-br from-secondary/10 to-primary/5 p-8 rounded-2xl hover:shadow-lg transition">
-            <div className="text-5xl mb-4"><Target className="w-12 h-12 mx-auto mb-3 text-primary" /></div>
-            <h3 className="text-2xl font-heading font-bold text-primary mb-3">Our Mission</h3>
-            <p className="text-gray-700 leading-relaxed">
+            <Target className="w-12 h-12 mx-auto mb-3 text-primary" aria-hidden="true" />
+            <h3 className="text-2xl font-heading font-bold text-primary mb-3 text-center">Our Mission</h3>
+            <p className="text-gray-700 leading-relaxed text-center">
               To provide a safe, caring, and engaging learning environment that inspires children
               to explore, discover, and achieve their full potential.
             </p>
@@ -107,21 +124,29 @@ export default function About() {
 
         {/* Message from the Principal */}
         <div className="grid md:grid-cols-2 gap-8 mb-16 items-center bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 md:p-8 shadow-lg">
-          {/* Image - Left side */}
-          <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
             <Image
               src="/images/about/principal.jpg"
-              alt="Principal - Dukes Yatani Kindergarten"
+              alt="Principal Mrs. Jane Mwangi of Dukes Yatani Kindergarten"
               fill
               className="object-cover hover:scale-105 transition duration-500"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+              sizes="(max-width: 768px) 100vw, 50vw"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = 'https://placehold.co/800x800/2f3e46/white?text=Principal';
+                target.style.display = 'none';
+                const parent = target.parentElement;
+                if (parent) {
+                  const fallback = document.createElement('div');
+                  fallback.className = 'w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-primary font-heading text-xl';
+                  fallback.textContent = 'Principal';
+                  parent.appendChild(fallback);
+                }
               }}
             />
           </div>
 
-          {/* Text - Right side */}
           <div>
             <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Principal</h3>
             <div className="w-16 h-1 bg-secondary rounded-full mb-4"></div>
@@ -168,7 +193,7 @@ export default function About() {
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-8 bg-gradient-to-b from-gray-50 to-white rounded-2xl hover:shadow-xl transition-all duration-300 group">
                 <div className="bg-secondary/10 p-4 rounded-full mb-5 group-hover:bg-secondary/20 transition">
-                  <item.icon className={`text-secondary w-10 h-10 ${item.color}`} />
+                  <item.icon className={`text-secondary w-10 h-10 ${item.color}`} aria-hidden="true" />
                 </div>
                 <h4 className="text-xl font-heading font-bold text-primary mb-3">{item.title}</h4>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
