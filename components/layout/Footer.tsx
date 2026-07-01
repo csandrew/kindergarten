@@ -74,8 +74,8 @@ export default function Footer() {
             <ul className="space-y-2" role="navigation" aria-label="Quick links">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <button 
-                    onClick={() => scrollToSection(link.id)} 
+                  <button
+                    onClick={() => scrollToSection(link.id)}
                     className="text-gray-300 hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary rounded px-2 py-1"
                   >
                     {link.name}
@@ -119,28 +119,26 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-600 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Dukes Yatani Kindergarten. All rights reserved.</p>
-          <p className="text-xs mt-1">Registered under the Ministry of Education, Kenya</p>
-          <div className="flex justify-center space-x-4 mt-2">
-            <Link 
-              href="/terms" 
-              className="hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2"
-            >
-              Terms of Service
-            </Link>
-            <Link 
-              href="/privacy" 
-              className="hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2"
-            >
-              Privacy Policy
-            </Link>
-            <Link 
-              href="/sitemap" 
-              className="hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2"
-            >
-              Sitemap
-            </Link>
+        <div className="border-t border-gray-600 pt-8 text-sm text-gray-400">
+        
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; {new Date().getFullYear()} Dukes Yatani Kindergarten. All rights reserved.</p>
+
+            <div className="flex space-x-4">
+              <Link
+                href="/terms"
+                className="hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/privacy"
+                className="hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2"
+              >
+                Privacy Policy
+              </Link>
+             
+            </div>
           </div>
         </div>
       </div>
