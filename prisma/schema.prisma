@@ -2,10 +2,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// FIXED: Changed from sqlite to postgresql
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  //  REMOVED: url = env("DATABASE_URL")
 }
 
 model ContactSubmission {
