@@ -121,10 +121,10 @@ export default function Header() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-white transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-white rounded px-2 py-1 ${
+                  className={`text-white transition-colors font-medium focus:outline-none focus:underline-offset-2 focus:ring-white rounded px-2 py-1 ${
                     activeSection === item.id 
                       ? 'text-secondary font-bold border-b-2 border-secondary' 
-                      : 'hover:text-secondary'
+                      : 'hover:text-primary focus:text-primary'
                   }`}
                   aria-current={activeSection === item.id ? 'page' : undefined}
                 >

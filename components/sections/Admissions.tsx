@@ -217,7 +217,7 @@ export default function AdmissionsPage() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <p className="text-xl max-w-4xl mx-auto">
+          <p className="text-xl max-w-5xl mx-auto">
             Choosing the right school for a child is one of the most important decisions any parent or guardian will make,
             and choosing an environment that opens the world for the child gives them an added advantage.
             We welcome children from diverse backgrounds and are committed to helping every learner thrive.

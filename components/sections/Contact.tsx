@@ -36,11 +36,12 @@ const CONTACT_INFO = {
   }
 }
 
+// 🔥 FIXED: Removed color property, will use CSS classes instead
 const SOCIAL_LINKS = [
-  { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', color: '#1877f2', label: 'Facebook' },
-  { icon: FaTwitter, href: 'https://twitter.com/dukesyatani', color: '#1da1f2', label: 'Twitter' },
-  { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', color: '#e4405f', label: 'Instagram' },
-  { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', color: '#0a66c2', label: 'LinkedIn' }
+  { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', label: 'Facebook', colorClass: 'text-[#1877f2] hover:text-[#1877f2]' },
+  { icon: FaTwitter, href: 'https://twitter.com/dukesyatani', label: 'Twitter', colorClass: 'text-[#1da1f2] hover:text-[#1da1f2]' },
+  { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', label: 'Instagram', colorClass: 'text-[#e4405f] hover:text-[#e4405f]' },
+  { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', label: 'LinkedIn', colorClass: 'text-[#0a66c2] hover:text-[#0a66c2]' }
 ]
 
 const MAP_EMBED_URL = process.env.NEXT_PUBLIC_MAP_EMBED_URL || ''
@@ -168,7 +169,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <p className="text-xl max-w-4xl mx-auto">
+          <p className="text-xl max-w-5xl mx-auto">
             Whether you have questions about our programs, want to schedule a tour, or just want to say hello, feel free to reach out. Our team is here to assist you and provide all the information you need about Dukes Yatani Kindergarten.
           </p>
         </div>
@@ -197,6 +198,7 @@ export default function ContactPage() {
                     Follow Us
                   </h3>
                   <div className="flex space-x-6">
+                    {/* 🔥 FIXED: Using colorClass instead of inline style */}
                     {SOCIAL_LINKS.map((social, idx) => (
                       <a
                         key={idx}
@@ -204,7 +206,7 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Follow us on ${social.label}`}
-                        className={`text-[${social.color}] hover:opacity-80 transition hover:scale-110 transform`}
+                        className={`${social.colorClass} hover:opacity-80 transition hover:scale-110 transform`}
                       >
                         <social.icon size={32} aria-hidden="true" />
                       </a>

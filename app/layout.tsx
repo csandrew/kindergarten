@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Poppins, Montserrat } from 'next/font/google'
+import { Inter, Poppins, Marcellus } from 'next/font/google'
 import Script from 'next/script'
 
 import Header from '@/components/layout/Header'
@@ -21,9 +21,10 @@ const poppins = Poppins({
   display: 'swap'
 })
 
-const montserrat = Montserrat({
+const marcellus = Marcellus({
+  weight: '400', 
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-marcellus',
   display: 'swap'
 })
 
@@ -121,7 +122,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable} ${montserrat.variable}`}
+      className={`${inter.variable} ${poppins.variable} ${marcellus.variable} scroll-smooth`}
     >
       <head>
         {/* Preconnect for Performance */}

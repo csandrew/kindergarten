@@ -55,6 +55,11 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* ============================================
+     TYPOGRAPHY - FONT HIERARCHY
+     ============================================ */
+  
+  /* Body: Inter (clean, readable sans-serif) */
   body {
     font-family: var(--font-inter, system-ui, -apple-system, sans-serif);
     background-color: var(--white);
@@ -63,11 +68,42 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Main Headings: Poppins (bold, modern sans-serif) */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-poppins, system-ui, -apple-system, sans-serif);
   }
 
-  /* Focus Styles for Accessibility */
+  /* ============================================
+     MARCELUSS - ELEGANT SERIF FONT
+     Use for hero titles, brand elements, testimonials, quotes
+     ============================================ */
+  
+  /* Base Marcellus class */
+  .font-marcellus {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+  }
+
+  .font-marcellus-regular {
+    font-family: var(--font-marcellus), Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* Specific use cases for Marcellus */
+  .hero-title,
+  .brand-name,
+  .brand-tagline,
+  .testimonial-quote,
+  .testimonial-text,
+  .elegant-heading,
+  .section-headline,
+  .quote-text,
+  .highlight-heading {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+  }
+
+  /* ============================================
+     FOCUS STYLES FOR ACCESSIBILITY
+     ============================================ */
   *:focus-visible {
     outline: 2px solid var(--secondary);
     outline-offset: 2px;
@@ -89,7 +125,9 @@
     border-radius: 4px;
   }
 
-  /* Selection Styles */
+  /* ============================================
+     SELECTION STYLES
+     ============================================ */
   ::selection {
     background: var(--secondary);
     color: white;
@@ -100,7 +138,9 @@
     color: white;
   }
 
-  /* Placeholder Styles */
+  /* ============================================
+     PLACEHOLDER STYLES
+     ============================================ */
   ::placeholder {
     color: #9ca3af;
     opacity: 1;
@@ -126,7 +166,9 @@
     opacity: 1;
   }
 
-  /* Custom Scrollbar */
+  /* ============================================
+     CUSTOM SCROLLBAR
+     ============================================ */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -152,7 +194,9 @@
     scrollbar-color: var(--secondary) var(--off-white);
   }
 
-  /* Reduced Motion Support */
+  /* ============================================
+     REDUCED MOTION SUPPORT
+     ============================================ */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -166,7 +210,9 @@
 }
 
 @layer components {
-  /* Container */
+  /* ============================================
+     CONTAINER
+     ============================================ */
   .container {
     max-width: 1280px;
     margin-left: auto;
@@ -189,7 +235,9 @@
     }
   }
 
-  /* Typography */
+  /* ============================================
+     TYPOGRAPHY SIZES
+     ============================================ */
   h1 {
     font-size: clamp(2rem, 5vw, 3.75rem);
     line-height: 1.2;
@@ -219,7 +267,9 @@
     line-height: 1.6;
   }
 
-  /* Buttons */
+  /* ============================================
+     BUTTONS
+     ============================================ */
   .btn-primary {
     background-color: var(--primary);
     color: white;
@@ -254,7 +304,9 @@
     box-shadow: 0 4px 15px rgba(132, 169, 140, 0.3);
   }
 
-  /* Cards */
+  /* ============================================
+     CARDS
+     ============================================ */
   .card {
     background: white;
     border-radius: 1rem;
@@ -268,7 +320,9 @@
     transform: translateY(-4px);
   }
 
-  /* Inputs */
+  /* ============================================
+     INPUTS
+     ============================================ */
   .input-primary {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -283,10 +337,104 @@
     box-shadow: 0 0 0 4px rgba(132, 169, 140, 0.1);
     outline: none;
   }
+
+  /* ============================================
+     HERO SECTION WITH MARCELUSS
+     ============================================ */
+  .hero-section {
+    padding: 4rem 0;
+  }
+
+  .hero-title {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  /* ============================================
+     TESTIMONIALS WITH MARCELUSS
+     ============================================ */
+  .testimonial {
+    padding: 2rem;
+  }
+
+  .testimonial-quote {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    font-family: var(--font-inter), sans-serif;
+    font-weight: 600;
+  }
+
+  .testimonial-role {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 0.875rem;
+    opacity: 0.7;
+  }
+
+  /* ============================================
+     SECTION HEADINGS WITH HIERARCHY
+     ============================================ */
+  .section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-heading .subtitle {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .section-heading .title {
+    font-family: var(--font-poppins), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-top: 0.5rem;
+  }
+
+  .section-heading .description {
+    font-family: var(--font-inter), sans-serif;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0.75rem auto 0;
+  }
+
+  /* ============================================
+     BRAND ELEMENTS WITH MARCELUSS
+     ============================================ */
+  .brand-name {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-tagline {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+  }
 }
 
 @layer utilities {
-  /* Text Gradients */
+  /* ============================================
+     TEXT GRADIENTS
+     ============================================ */
   .text-gradient {
     background: linear-gradient(135deg, var(--primary), var(--deep-burgundy));
     -webkit-background-clip: text;
@@ -308,7 +456,9 @@
     color: transparent;
   }
 
-  /* Background Gradients */
+  /* ============================================
+     BACKGROUND GRADIENTS
+     ============================================ */
   .bg-gradient-primary {
     background: linear-gradient(135deg, var(--primary), var(--deep-burgundy));
   }
@@ -321,7 +471,9 @@
     background: linear-gradient(135deg, var(--primary), var(--deep-burgundy), var(--darker-burgundy));
   }
 
-  /* Shadows */
+  /* ============================================
+     SHADOWS
+     ============================================ */
   .shadow-soft {
     box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
   }
@@ -338,7 +490,21 @@
     box-shadow: 0 0 40px rgba(132, 169, 140, 0.2);
   }
 
-  /* Aspect Ratios */
+  /* ============================================
+     MARCELUSS FONT UTILITIES
+     ============================================ */
+  .font-marcellus {
+    font-family: var(--font-marcellus), Georgia, 'Times New Roman', serif;
+  }
+  
+  .font-marcellus-regular {
+    font-family: var(--font-marcellus), Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* ============================================
+     ASPECT RATIOS
+     ============================================ */
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
@@ -355,7 +521,9 @@
     aspect-ratio: 4 / 3;
   }
 
-  /* Truncation */
+  /* ============================================
+     TRUNCATION
+     ============================================ */
   .truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -377,7 +545,9 @@
     overflow: hidden;
   }
 
-  /* Animation Delays */
+  /* ============================================
+     ANIMATION DELAYS
+     ============================================ */
   .animation-delay-100 { animation-delay: 100ms; }
   .animation-delay-200 { animation-delay: 200ms; }
   .animation-delay-300 { animation-delay: 300ms; }
@@ -396,7 +566,9 @@
   .animation-fill-backwards { animation-fill-mode: backwards; }
   .animation-fill-both { animation-fill-mode: both; }
 
-  /* Social Media Colors */
+  /* ============================================
+     SOCIAL MEDIA COLORS
+     ============================================ */
   .bg-facebook { background-color: #1877f2; }
   .bg-twitter { background-color: #1da1f2; }
   .bg-instagram { background-color: #e4405f; }
@@ -418,7 +590,9 @@
   .hover\:text-youtube:hover { color: #ff0000; }
   .hover\:text-tiktok:hover { color: #000000; }
 
-  /* Backdrop Blur */
+  /* ============================================
+     BACKDROP BLUR
+     ============================================ */
   .backdrop-blur-xs {
     backdrop-filter: blur(2px);
   }
@@ -444,7 +618,9 @@
   }
 }
 
-/* Print Styles */
+/* ============================================
+   PRINT STYLES
+   ============================================ */
 @media print {
   *,
   *::before,
@@ -477,7 +653,9 @@
   }
 }
 
-/* Container Queries */
+/* ============================================
+   CONTAINER QUERIES
+   ============================================ */
 @container (min-width: 640px) {
   .container\:sm\:flex-row { flex-direction: row; }
 }
