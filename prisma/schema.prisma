@@ -1,15 +1,11 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client-js"
 }
 
+// FIXED: Changed from sqlite to postgresql
 datasource db {
-  provider = "sqlite"
-  
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model ContactSubmission {
@@ -38,10 +34,10 @@ model Enrollment {
   parentName        String
   parentEmail       String
   parentPhone       String
-  program           String   // Playgroup, Nursery, Pre-K, Kindergarten
+  program           String
   preferredStartDate DateTime
   message           String?
-  status            String   @default("pending") // pending, contacted, enrolled
+  status            String   @default("pending")
   createdAt         DateTime @default(now())
 }
 
@@ -57,6 +53,6 @@ model PrincipalMessage {
 model SiteContent {
   id         Int      @id @default(autoincrement())
   section    String   @unique
-  content    String   // JSON string
+  content    String
   updatedAt  DateTime @updatedAt
 }
