@@ -25,7 +25,7 @@ const facilities = [
     title: 'Parent Partnership',
     desc: 'Strong parent-teacher collaboration'
   },
-]
+] 
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -157,7 +157,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </section>
     </>
   )

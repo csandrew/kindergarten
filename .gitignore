@@ -1,39 +1,20 @@
-# Database files (SQLite) - VERY IMPORTANT
-*.db
-*.sqlite
-*.sqlite3
-data.db
-database.sqlite
-/prisma/*.db
-/prisma/dev.db
-/prisma/dev.db-journal
-prisma/*.db-journal
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
 
-# Prisma generated files
-/prisma/migrations/*.sql
-prisma/*.db
-prisma/*.db-journal
-/generated/prisma/  # You already have this line
+# Next.js
+.next/
+out/
+dist/
+build/
 
-# SQLite database files in root
-*.db-wal
-*.db-shm
-*.db-journal
-
-# IDE folders (if you use VS Code or other editors)
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-.DS_Store?
-
-# OS files
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-desktop.ini
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
 logs/
@@ -41,104 +22,44 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
-lerna-debug.log*
 
-# Local configuration
-*.local
-*.local.json
-
-# Backup files
-*.backup
-*.bak
-*.old
-*.orig
-
-# Temporary files
-tmp/
-temp/
-*.tmp
-.cache/
-
-# Environment specific
-.env
-.env.local
-.env.production
-.env.staging
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Secrets and keys
-*.key
-*.pem
-*.crt
-*.p12
-.secrets/
-keys/
-.ssl/
-*.secret
-
-# Coverage directories
+# Testing
 coverage/
 .nyc_output/
 
-# Build outputs
-dist/
-build/
-.next/
-out/
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
 
-# Debug logs
-debug.log
+# Misc
+*.pem
+*.key
+*.cert
+*.crt
 
-# Dependency directories
-node_modules/
-jspm_packages/
+# TypeScript
+*.tsbuildinfo
 
-# Optional npm cache
-.npm
+# Temp files
+tmp/
+temp/
+*.tmp
 
-# Optional eslint cache
-.eslintcache
+# Bundle analysis
+.next/analyze/
 
-# Optional REPL history
-.node_repl_history
+# Sentry
+.sentry/
 
-# Output of 'npm pack'
-*.tgz
+# Firebase
+.firebase/
+firebase-debug.log
 
-# Yarn Integrity file
-.yarn-integrity
+# Vercel
+.vercel/
 
-# dotenv environment variables file
-.env
-.env*.local
-
-# Parcel (if you ever use it)
-.parcel-cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build output (if applicable)
-.nuxt
-
-# Vue.js build output (if applicable)
-dist
-
-# Gatsby files (if applicable)
-.cache/
-public
-
-# GraphQL
-.graphqlconfig
-
-# Stylelint cache
-.stylelintcache
-
-# pnpm (if using pnpm)
-.pnpm-store
-
-# Turbopack (Next.js 13+)
-.turbo
+# Railway
+railway.json
