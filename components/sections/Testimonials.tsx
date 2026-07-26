@@ -11,7 +11,6 @@ const testimonials = [
     content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
     rating: 5,
     image: '/images/testimonials/parent-1.jpg',
-    // Add fallback colors for avatar
     fallbackColor: '#2f3e46'
   },
   {
@@ -138,7 +137,7 @@ export default function Testimonials() {
                         className="object-cover w-full h-full"
                         onError={() => handleImageError(current)}
                         unoptimized={true} // Add this for development
-                      />
+                      /> 
                     ) : (
                       <div 
                         className="w-full h-full flex items-center justify-center text-white text-2xl font-bold"

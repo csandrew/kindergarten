@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, Shield, Users, Star, TrendingUp, GraduationCap, Calendar } from 'lucide-react'
 
-// ✅ Use the imported Hero component
+//  Use the imported Hero component
 import Hero from '@/components/sections/Hero'
 
 // Lazy load components
@@ -129,13 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WHY CHOOSE US ===== */}
-      <ErrorBoundary fallback={<SectionError componentName="Why Choose Us" />}>
-        <Suspense fallback={<SectionSkeleton />}>
-          <WhyChooseUs />
-        </Suspense>
-      </ErrorBoundary>
-
       {/* ===== TESTIMONIALS ===== */}
       <ErrorBoundary fallback={<SectionError componentName="Testimonials" />}>
         <Suspense fallback={<SectionSkeleton />}>
@@ -143,29 +136,7 @@ export default function Home() {
         </Suspense>
       </ErrorBoundary>
 
-      {/* ===== FINAL CTA ===== */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-primary to-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
-            Ready to Start Your Child's Journey?
-          </h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto mb-8">
-            Join the Dukes family and give your child the best start in life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/admissions">
-              <Button variant="primary" size="lg" className="bg-white text-primary hover:bg-white/90">
-                Enroll Now <ArrowRight size={18} className="ml-2" />
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
-                Contact Us
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+     
     </>
   )
 }

@@ -50,34 +50,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-              <Calendar className="w-12 h-12 mx-auto mb-3 text-white/90" />
-              <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{yearsServed}+</div>
-              <p className="text-lg font-semibold">Years of Excellence</p>
-              <p className="text-white/80 text-sm mt-2">Serving since {startYear}</p>
-            </div>
-            
-            <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-              <GraduationCap className="w-12 h-12 mx-auto mb-3 text-white/90" />
-              <div className="text-4xl md:text-5xl font-heading font-bold mb-2">{childrenTrained.toLocaleString()}+</div>
-              <p className="text-lg font-semibold">Children Nurtured</p>
-              <p className="text-white/80 text-sm mt-2">Young minds shaped for success</p>
-            </div>
-
-            <div className="bg-primary rounded-2xl p-6 text-center text-white shadow-xl">
-              <Users className="w-12 h-12 mx-auto mb-3 text-white/90" />
-              <div className="text-4xl md:text-5xl font-heading font-bold mb-2">100%</div>
-              <p className="text-lg font-semibold">Parent Satisfaction</p>
-              <p className="text-white/80 text-sm mt-2">Trusted by our community</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -204,7 +176,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-primary text-white">
+      <section className="py-12 bg-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-heading font-bold mb-4">Ready to Join the Dukes Family?</h3>
           <p className="text-white/90 max-w-2xl mx-auto mb-6">Give your child the best start in life.</p>

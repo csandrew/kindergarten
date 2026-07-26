@@ -4,9 +4,9 @@ import { useState, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { 
-  BookOpen, Calculator, Brain, Globe, Palette, Heart, 
-  Music, Trophy, Leaf, Users, Sparkles, CheckCircle, 
+import {
+  BookOpen, Calculator, Brain, Globe, Palette, Heart,
+  Music, Trophy, Leaf, Users, Sparkles, CheckCircle,
   ArrowRight, Clock, Award, Star
 } from 'lucide-react'
 
@@ -56,34 +56,10 @@ export default function ProgramsPage() {
     },
   ]
 
-  const learningAreas = [
-    { icon: BookOpen, name: 'Communication & Language', color: 'bg-orange-500' },
-    { icon: Brain, name: 'Literacy', color: 'bg-blue-500' },
-    { icon: Calculator, name: 'Mathematics', color: 'bg-green-500' },
-    { icon: Heart, name: 'Physical Development', color: 'bg-red-500' },
-    { icon: Music, name: 'Music & Dance', color: 'bg-purple-500' },
-    { icon: Palette, name: 'Creative Arts', color: 'bg-pink-500' },
-    { icon: Globe, name: 'Social Studies', color: 'bg-teal-500' },
-    { icon: Leaf, name: 'Environmental Awareness', color: 'bg-emerald-500' },
-  ]
 
-  const dailySchedule = [
-    { time: '7:30 AM', activity: 'Arrival & Free Play' },
-    { time: '8:30 AM', activity: 'Morning Circle & Greeting' },
-    { time: '9:00 AM', activity: 'Learning Activity 1' },
-    { time: '9:45 AM', activity: 'Snack Time' },
-    { time: '10:15 AM', activity: 'Outdoor Play' },
-    { time: '11:00 AM', activity: 'Learning Activity 2' },
-    { time: '11:45 AM', activity: 'Story Time & Music' },
-    { time: '12:30 PM', activity: 'Lunch' },
-    { time: '1:30 PM', activity: 'Rest Time' },
-    { time: '2:30 PM', activity: 'Afternoon Activity' },
-    { time: '3:30 PM', activity: 'Outdoor Play' },
-    { time: '4:30 PM', activity: 'Free Play & Departure' },
-  ]
 
-  const filteredPrograms = activeTab === 'all' 
-    ? programs 
+  const filteredPrograms = activeTab === 'all'
+    ? programs
     : programs.filter(p => p.id === activeTab)
 
   const scrollToAdmissions = useCallback(() => {
@@ -101,7 +77,7 @@ export default function ProgramsPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
+      <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Our Programs</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
@@ -111,6 +87,10 @@ export default function ProgramsPage() {
         </div>
       </section>
 
+
+    
+
+
       {/* Programs Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -118,11 +98,10 @@ export default function ProgramsPage() {
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             <button
               onClick={() => setActiveTab('all')}
-              className={`px-4 py-2 rounded-full transition ${
-                activeTab === 'all' 
-                  ? 'bg-primary text-white' 
+              className={`px-4 py-2 rounded-full transition ${activeTab === 'all'
+                  ? 'bg-primary text-white'
                   : 'bg-white text-primary hover:bg-primary/10'
-              }`}
+                }`}
             >
               All Programs
             </button>
@@ -130,11 +109,10 @@ export default function ProgramsPage() {
               <button
                 key={p.id}
                 onClick={() => setActiveTab(p.id)}
-                className={`px-4 py-2 rounded-full transition ${
-                  activeTab === p.id 
-                    ? 'bg-primary text-white' 
+                className={`px-4 py-2 rounded-full transition ${activeTab === p.id
+                    ? 'bg-primary text-white'
                     : 'bg-white text-primary hover:bg-primary/10'
-                }`}
+                  }`}
               >
                 {p.title}
               </button>
@@ -162,7 +140,7 @@ export default function ProgramsPage() {
                 <div className="p-6">
                   <h3 className="text-2xl font-heading font-bold text-primary mb-2">{program.title}</h3>
                   <p className="text-gray-600 mb-4">{program.description}</p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {program.features.map((feature, fIdx) => (
                       <span key={fIdx} className="bg-secondary/10 text-secondary text-sm px-3 py-1 rounded-full">
@@ -188,53 +166,9 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* Learning Areas */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Learning Through Discovery</h2>
-            <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
-            <p className="text-white/90 mt-4">
-              Children engage in exciting activities that encourage exploration, creativity, and problem-solving
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {learningAreas.map((area, idx) => (
-              <div key={idx} className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center hover:bg-white/25 transition group">
-                <area.icon className="w-8 h-8 mx-auto mb-2 text-white group-hover:scale-110 transition" />
-                <span className="text-sm font-medium">{area.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Daily Schedule */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
-              A Day at Dukes
-            </h2>
-            <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
-            <p className="text-gray-600 mt-4">
-              Our daily schedule provides structure while allowing flexibility for exploration and play
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {dailySchedule.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-3 bg-gray-50 rounded-lg hover:bg-secondary/10 transition">
-                <div className="bg-primary text-white text-xs font-bold px-2 py-1 rounded">
-                  {item.time}
-                </div>
-                <span className="text-gray-700">{item.activity}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
@@ -266,7 +200,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-primary text-white">
+      <section className="py-12 bg-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-heading font-bold mb-4">Ready to Enroll?</h3>
           <p className="text-white/90 max-w-2xl mx-auto mb-6">Give your child the best start in their educational journey</p>

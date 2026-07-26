@@ -209,23 +209,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Quick Links */}
-              <div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
-                <h3 className="font-heading font-semibold text-lg text-primary mb-4">
-                  Quick Links
-                </h3>
-                <div className="space-y-2">
-                  <Link href="/admissions" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    <ArrowRight size={16} /> Admissions
-                  </Link>
-                  <Link href="/programs" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    <ArrowRight size={16} /> Programs
-                  </Link>
-                  <Link href="/about" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    <ArrowRight size={16} /> About Us
-                  </Link>
-                </div>
-              </div>
             </div>
 
             {/* Right Side - Contact Form */}
@@ -385,11 +368,6 @@ export default function ContactPage() {
                 <MapPin size={18} className="mr-2" aria-hidden="true" />
                 Get Directions →
               </Button>
-              <Link href="/admissions" className="flex-1">
-                <Button variant="primary" className="w-full">
-                  Enroll Now <CheckCircle size={18} className="ml-2" />
-                </Button>
-              </Link>
             </div>
           </div>
         </div>

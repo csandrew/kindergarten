@@ -24,16 +24,16 @@ const CONTACT_INFO = {
 
 export default function Footer() {
   const quickLinks = [
+    {name: 'Home', href : '/about'},
     { name: 'About Us', href: '/about' },
-    { name: 'Programs', href: '/programs' },
-    { name: 'Admissions', href: '/admissions' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Our Programs', href: '/programs' },
+    { name: 'Admissions', href: '/admissions' }
   ]
 
   return (
     <footer className="bg-primary text-white pt-16 pb-8" role="contentinfo" aria-label="Site footer">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto,auto,auto,auto] gap-8 mb-12">
           {/* About */}
           <div>
             <h3 className="text-xl font-heading font-bold mb-4">Dukes Yatani Kindergarten</h3>

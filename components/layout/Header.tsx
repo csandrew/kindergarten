@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/Button'
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
-  { name: 'Programs', href: '/programs' },
+  { name: 'Our Programs', href: '/programs' },
   { name: 'Admissions', href: '/admissions' },
   { name: 'Contact Us', href: '/contact' },
 ]
@@ -57,11 +57,11 @@ export default function Header() {
         aria-label="Site header"
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
+          <div className="flex items-center justify-between relative">
+            {/* Logo - Left */}
             <Link 
               href="/" 
-              className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
+              className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
               aria-label="Dukes Yatani Kindergarten - Home"
             >
               <Image
@@ -86,9 +86,9 @@ export default function Header() {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Centered */}
             <nav 
-              className="hidden md:flex items-center gap-6"
+              className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2"
               role="navigation"
               aria-label="Main navigation"
             >
@@ -96,7 +96,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2 py-1 ${
+                  className={`font-medium transition hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2 py-1 whitespace-nowrap ${
                     isActive(item.href)
                       ? 'text-secondary font-semibold'
                       : isScrolled 
@@ -108,13 +108,16 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              
+            </nav>
+
+            {/* Button - Right */}
+            <div className="hidden md:block flex-shrink-0">
               <Link href="/admissions">
-                <Button variant="secondary" size="sm" className="ml-2">
+                <Button variant="secondary" size="sm">
                   Enroll Now
                 </Button>
               </Link>
-            </nav>
+            </div>
 
             {/* Mobile Menu Button */}
             <button

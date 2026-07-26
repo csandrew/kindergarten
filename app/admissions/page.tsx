@@ -1,18 +1,16 @@
 // src/app/admissions/page.tsx
 'use client'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { 
   CheckCircle, FileText, Calendar, Users, 
   Download, ArrowRight, 
-  Award, BookOpen, Star, Heart, Plus, Minus
+  BookOpen, Heart, Plus, Minus
 } from 'lucide-react'
 
 export default function AdmissionsPage() {
-  const router = useRouter()
-  const [openFaqs, setOpenFaqs] = useState<number[]>([0]) // First FAQ open by default
+  const [openFaqs, setOpenFaqs] = useState<number[]>([0])
 
   const faqs = [
     {
@@ -68,7 +66,6 @@ export default function AdmissionsPage() {
   ]
 
   const downloadableDocs = [
-   
     { 
       name: 'Parent Handbook', 
       description: 'Learn about our policies, procedures, and what to expect',
@@ -106,10 +103,9 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      {/* Process and Form Section */}
+      {/* Process Section */}
       <section className="py-16 bg-gray-50" id="admissions-process">
         <div className="container mx-auto px-4">
-          {/* Admission Process */}
           <h2 className="text-3xl font-heading font-bold text-primary text-center mb-4">
             Admission Process
           </h2>
@@ -131,30 +127,25 @@ export default function AdmissionsPage() {
             ))}
           </div>
 
-          {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left Side - Admission Requirements & Downloads */}
-            <div>
-              {/* Admission Requirements */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-200 mb-6">
-                <h3 className="text-xl font-heading font-bold text-primary mb-4">
-                  Admission Requirements
-                </h3>
-                <ul className="space-y-3">
-                  {requirements.map((req, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="text-secondary w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="text-gray-700">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          {/* Requirements & Downloads */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
+              <h3 className="text-xl font-heading font-bold text-primary mb-4">
+                Admission Requirements
+              </h3>
+              <ul className="space-y-3 mb-8">
+                {requirements.map((req, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle className="text-secondary w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <span className="text-gray-700">{req}</span>
+                  </li>
+                ))}
+              </ul>
 
-              {/* Downloadable Documents */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200">
-                <h3 className="text-xl font-heading font-bold text-primary mb-4">
+              <div className="border-t border-gray-200 pt-6">
+                <h4 className="text-lg font-heading font-bold text-primary mb-4">
                   Downloadable Forms
-                </h3>
+                </h4>
                 <p className="text-gray-600 text-sm mb-4">
                   Download and complete the required forms. Submit them along with the required documents.
                 </p>
@@ -180,67 +171,67 @@ export default function AdmissionsPage() {
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Right Side - FAQs */}
-            <div>
-              <div className="bg-white p-6 rounded-2xl border border-gray-200">
-                <h3 className="text-xl font-heading font-bold text-primary mb-4">
-                  Frequently Asked Questions
-                </h3>
-                <div className="space-y-2">
-                  {faqs.map((faq, idx) => {
-                    const isOpen = openFaqs.includes(idx)
-                    return (
-                      <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
-                        <button
-                          onClick={() => toggleFaq(idx)}
-                          className="w-full px-4 py-3 flex items-center justify-between gap-4 text-left hover:bg-gray-50 transition group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
-                          aria-expanded={isOpen}
-                        >
-                          <h4 className="font-semibold text-primary group-hover:text-secondary transition flex-1 text-sm md:text-base">
-                            {faq.question}
-                          </h4>
-                          <span className={`
-                            flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition
-                            ${isOpen 
-                              ? 'bg-secondary text-white' 
-                              : 'bg-gray-100 text-secondary group-hover:bg-gray-200'
-                            }
-                          `}>
-                            {isOpen ? (
-                              <Minus size={16} aria-hidden="true" />
-                            ) : (
-                              <Plus size={16} aria-hidden="true" />
-                            )}
-                          </span>
-                        </button>
-                        
-                        <div
-                          className={`
-                            overflow-hidden transition-all duration-300 ease-in-out
-                            ${isOpen ? 'max-h-[500px]' : 'max-h-0'}
-                          `}
-                        >
-                          <div className="px-4 pb-4 text-gray-600 text-sm">
-                            {faq.answer}
-                          </div>
+          {/* FAQs */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200">
+              <h3 className="text-xl font-heading font-bold text-primary mb-4">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-2">
+                {faqs.map((faq, idx) => {
+                  const isOpen = openFaqs.includes(idx)
+                  return (
+                    <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full px-4 py-3 flex items-center justify-between gap-4 text-left hover:bg-gray-50 transition group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+                        aria-expanded={isOpen}
+                      >
+                        <h4 className="font-semibold text-primary group-hover:text-secondary transition flex-1 text-sm md:text-base">
+                          {faq.question}
+                        </h4>
+                        <span className={`
+                          flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition
+                          ${isOpen 
+                            ? 'bg-secondary text-white' 
+                            : 'bg-gray-100 text-secondary group-hover:bg-gray-200'
+                          }
+                        `}>
+                          {isOpen ? (
+                            <Minus size={16} aria-hidden="true" />
+                          ) : (
+                            <Plus size={16} aria-hidden="true" />
+                          )}
+                        </span>
+                      </button>
+                      
+                      <div
+                        className={`
+                          overflow-hidden transition-all duration-300 ease-in-out
+                          ${isOpen ? 'max-h-[500px]' : 'max-h-0'}
+                        `}
+                      >
+                        <div className="px-4 pb-4 text-gray-600 text-sm">
+                          {faq.answer}
                         </div>
                       </div>
-                    )
-                  })}
-                </div>
+                    </div>
+                  )
+                })}
+              </div>
 
-                {/* Contact Admissions Team */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-xl text-center">
-                  <p className="text-gray-700 mb-3 font-medium">
-                    Still have questions?
-                  </p>
-                  <Link href="/contact">
-                    <Button variant="primary" size="sm">
-                      Contact Admissions Team
-                    </Button>
-                  </Link>
-                </div>
+              {/* Contact Admissions Team */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-xl text-center">
+                <p className="text-gray-700 mb-3 font-medium">
+                  Still have questions?
+                </p>
+                <Link href="/contact">
+                  <Button variant="primary" size="sm">
+                    Contact Admissions Team
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
