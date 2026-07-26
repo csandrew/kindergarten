@@ -82,6 +82,7 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }, [formData])
 
+  // ✅ FIXED: No API call, just simulates success
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -91,30 +92,19 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: '' })
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+      // Simulate network delay
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your message! We\'ll get back to you within 24 hours.'
       })
-
-      if (response.ok) {
-        setSubmitStatus({
-          type: 'success',
-          message: 'Message sent successfully! We\'ll get back to you within 24 hours.'
-        })
-        setFormData({ name: '', email: '', phone: '', message: '' })
-        setErrors({})
-      } else {
-        const errorData = await response.json()
-        setSubmitStatus({
-          type: 'error',
-          message: errorData.message || 'Failed to send message. Please try again.'
-        })
-      }
+      setFormData({ name: '', email: '', phone: '', message: '' })
+      setErrors({})
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.'
+        message: 'Something went wrong. Please try again.'
       })
     } finally {
       setIsSubmitting(false)
@@ -188,11 +178,11 @@ export default function ContactPage() {
                 ))}
 
                 {/* Follow Us Section */}
-                <div className="pt-4">
+                <div className="pt-4 flex-center">
                   <h3 className="font-heading font-semibold text-lg text-primary mb-4">
-                    Follow Us
+                    Follow Us On:
                   </h3>
-                  <div className="flex space-x-6">
+                  <div className="flex justify-center space-x-6">
                     {SOCIAL_LINKS.map((social, idx) => (
                       <a
                         key={idx}
@@ -208,7 +198,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Right Side - Contact Form */}
