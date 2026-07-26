@@ -2,7 +2,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Star, User } from 'lucide-react'
 
 const testimonials = [
   {
@@ -10,34 +10,40 @@ const testimonials = [
     childName: 'Ethan Mwangi',
     content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
     rating: 5,
-    image: '/images/testimonials/parent-1.jpg'
+    image: '/images/testimonials/parent-1.jpg',
+    // Add fallback colors for avatar
+    fallbackColor: '#2f3e46'
   },
   {
     name: 'David Ochieng',
     childName: 'Maya Ochieng',
     content: 'The school\'s nurturing atmosphere and engaging activities have made learning enjoyable for our child every day. We couldn\'t be happier with our choice.',
     rating: 5,
-    image: '/images/testimonials/parent-2.jpg'
+    image: '/images/testimonials/parent-2.jpg',
+    fallbackColor: '#84a98c'
   },
   {
     name: 'Grace Wanjiku',
     childName: 'Liam Wanjiku',
     content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend Dukes!',
     rating: 5,
-    image: '/images/testimonials/parent-3.jpg'
+    image: '/images/testimonials/parent-3.jpg',
+    fallbackColor: '#cad2c5'
   },
   {
     name: 'Michael Kimani',
     childName: 'Sophia Kimani',
     content: 'Dukes Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
     rating: 5,
-    image: '/images/testimonials/parent-4.jpg'
+    image: '/images/testimonials/parent-4.jpg',
+    fallbackColor: '#800e13'
   }
 ]
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({})
 
   const nextTestimonial = useCallback(() => {
     setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
@@ -71,6 +77,10 @@ export default function Testimonials() {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [prevTestimonial, nextTestimonial])
+
+  const handleImageError = useCallback((index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }))
+  }, [])
 
   return (
     <section id="testimonials" className="py-16 md:py-20 bg-gradient-to-br from-secondary/20 to-primary/10">
@@ -118,18 +128,25 @@ export default function Testimonials() {
 
               <div className="flex items-center justify-center gap-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-r from-secondary to-primary p-0.5">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                    <Image
-                      src={testimonials[current].image}
-                      alt={`${testimonials[current].name}, parent of ${testimonials[current].childName}`}
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonials[current].name)}&background=2f3e46&color=fff&size=200`;
-                      }}
-                    />
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
+                    {!imageErrors[current] ? (
+                      <Image
+                        src={testimonials[current].image}
+                        alt={`${testimonials[current].name}, parent of ${testimonials[current].childName}`}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                        onError={() => handleImageError(current)}
+                        unoptimized={true} // Add this for development
+                      />
+                    ) : (
+                      <div 
+                        className="w-full h-full flex items-center justify-center text-white text-2xl font-bold"
+                        style={{ backgroundColor: testimonials[current].fallbackColor }}
+                      >
+                        {testimonials[current].name.charAt(0)}
+                      </div>
+                    )}
                   </div>
                 </div>
                 <div>

@@ -11,10 +11,10 @@ import { Button } from '@/components/ui/Button'
 // Navigation items - now links to pages, not sections
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
+  { name: 'About Us', href: '/about' },
   { name: 'Programs', href: '/programs' },
   { name: 'Admissions', href: '/admissions' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact Us', href: '/contact' },
 ]
 
 export default function Header() {

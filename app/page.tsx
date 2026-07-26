@@ -1,4 +1,4 @@
-// src/app/page.tsx
+// app/page.tsx
 'use client'
 import { Suspense, lazy } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
@@ -6,6 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, Shield, Users, Star, TrendingUp, GraduationCap, Calendar } from 'lucide-react'
+
+// ✅ Use the imported Hero component
+import Hero from '@/components/sections/Hero'
 
 // Lazy load components
 const Testimonials = lazy(() => import('@/components/sections/Testimonials'))
@@ -26,14 +29,6 @@ const SectionSkeleton = () => (
   </div>
 )
 
-// Quick Features Data
-const features = [
-  { icon: Shield, title: 'Safe & Secure', desc: 'Protected environment for your child' },
-  { icon: Users, title: 'Qualified Teachers', desc: 'Passionate educators' },
-  { icon: Star, title: 'Holistic Development', desc: 'Academic, social & emotional' },
-  { icon: TrendingUp, title: 'Parent Partnership', desc: 'Strong collaboration' },
-]
-
 // Program Preview Data
 const programPreviews = [
   { age: '1-3 Years', title: 'Daycare', desc: 'Gentle introduction to learning', href: '/programs#daycare' },
@@ -45,76 +40,8 @@ const programPreviews = [
 export default function Home() {
   return (
     <>
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden" aria-label="Hero section">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero/hero.jpg"
-            alt="Dukes Yatani Kindergarten - Happy children learning"
-            fill
-            priority
-            className="object-cover"
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
-            sizes="100vw"
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-4xl mx-auto backdrop-blur-md bg-black/30 rounded-2xl p-6 md:p-10 border border-white/20">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 text-white">
-              Welcome to Dukes Yatani
-              <span className="block text-xl md:text-3xl mt-2 text-secondary">
-                Where Young Minds Grow, Explore, and Shine
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-100 leading-relaxed max-w-3xl">
-              A nurturing, safe environment where children discover their potential through play-based learning, creativity, and meaningful experiences.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <Link href="/admissions" className="w-full sm:w-auto">
-                <Button variant="primary" size="lg" className="w-full">
-                  Enroll Today <ArrowRight size={18} className="ml-2 inline" />
-                </Button>
-              </Link>
-              <Link href="/contact" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full border-white text-white hover:bg-white/20">
-                  Schedule a Visit
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Features Strip */}
-        <div className="absolute bottom-4 left-0 right-0">
-          <div className="container mx-auto px-4">
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl py-3 md:py-4 px-3 md:px-4 max-w-5xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
-                {features.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 md:gap-3 p-2 md:p-3 rounded-lg hover:bg-secondary/10 transition group">
-                    <div className="bg-secondary/20 p-1.5 md:p-2 rounded-lg group-hover:bg-secondary/30 transition flex-shrink-0">
-                      <item.icon className="text-secondary w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary text-xs md:text-sm lg:text-base">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-gray-500 hidden md:block">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ===== HERO SECTION - Using imported component ===== */}
+      <Hero />
 
       {/* ===== PROGRAMS PREVIEW ===== */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -169,14 +96,14 @@ export default function Home() {
               </h2>
               <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
               <p className="text-gray-200 leading-relaxed mb-4">
-                Since 2010, we've been nurturing young minds in a safe, caring environment where every child is encouraged to discover their potential.
+                Since 2010, we've been nurturing young minds in a safe, caring environment where every child is guided to discover their potential.
               </p>
               <p className="text-gray-200 leading-relaxed mb-6">
-                Our experienced educators create engaging learning experiences that help children develop confidence, curiosity, and independence.
+                Our experienced educators create engaging learning programs that help children develop confidence, curiosity, and independence.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/about">
-                  <Button variant="secondary">
+                  <Button variant="secondary" className="hover:bg-white/20">
                     Learn More <ArrowRight size={18} className="ml-2" />
                   </Button>
                 </Link>

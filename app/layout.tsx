@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins, Marcellus } from 'next/font/google'
 import Script from 'next/script'
@@ -35,27 +36,15 @@ export const metadata: Metadata = {
     default: 'Dukes Yatani Kindergarten | Where Young Minds Grow, Explore, and Shine',
     template: '%s | Dukes Yatani Kindergarten',
   },
-  description: 'Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years. Nurturing confident, creative, and responsible learners.',
-  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, Yatani, play-based learning',
+  description: 'Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years.',
+  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, Yatani',
   authors: [{ name: 'Dukes Yatani Kindergarten' }],
-  creator: 'Dukes Yatani Kindergarten',
-  publisher: 'Dukes Yatani Kindergarten',
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: 'https://dukesyatani.ac.ke',
   },
   openGraph: {
-    title: 'Dukes Yatani Kindergarten - Where Young Minds Grow, Explore, and Shine',
+    title: 'Dukes Yatani Kindergarten',
     description: 'Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years.',
     url: 'https://dukesyatani.ac.ke',
     siteName: 'Dukes Yatani Kindergarten',
@@ -64,7 +53,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dukes Yatani Kindergarten - Happy children learning',
+        alt: 'Dukes Yatani Kindergarten',
       },
     ],
     locale: 'en_KE',
@@ -72,11 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dukes Yatani Kindergarten - Where Young Minds Grow',
-    description: 'Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years.',
+    title: 'Dukes Yatani Kindergarten',
+    description: 'Premier kindergarten in Yatani offering play-based learning.',
     images: ['/images/twitter-image.jpg'],
-    creator: '@dukesyatani',
-    site: '@dukesyatani',
   },
   icons: {
     icon: [
@@ -87,18 +74,10 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    other: [
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
   },
   manifest: '/site.webmanifest',
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  },
 }
 
-// Viewport Configuration
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
@@ -108,8 +87,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
 }
-
-
 
 export default function RootLayout({
   children,
@@ -125,85 +102,40 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} ${marcellus.variable} scroll-smooth`}
     >
       <head>
-        {/* Preconnect for Performance */}
+        {/* Only preconnect for critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {GA_MEASUREMENT_ID && (
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
-        )}
-
-        {/* Preload Critical Assets */}
-        <link rel="preload" href="/images/hero/hero.jpg" as="image" type="image/jpeg" />
-
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
       </head>
       <body className="font-sans antialiased">
-        
-          {/* Google Analytics */}
-          {GA_MEASUREMENT_ID && isProduction && (
-            <>
-              <Script
-                strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              />
-              <Script
-                id="google-analytics"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                  __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-                }}
-              />
-            </>
-          )}
+        {/* Google Analytics */}
+        {GA_MEASUREMENT_ID && isProduction && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
 
-          {/* Organization Structured Data */}
-          <Script
-            id="organization-schema"
-            type="application/ld+json"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "EducationalOrganization",
-                "name": "Dukes Yatani Kindergarten",
-                "description": "Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years.",
-                "url": "https://dukesyatani.ac.ke",
-                "logo": "https://dukesyatani.ac.ke/images/logo.png",
-                "contactPoint": {
-                  "@type": "ContactPoint",
-                  "telephone": "+254700000000",
-                  "contactType": "Admissions",
-                  "availableLanguage": ["English", "Swahili"]
-                },
-                "sameAs": [
-                  "https://facebook.com/dukesyatani",
-                  "https://twitter.com/dukesyatani",
-                  "https://instagram.com/dukesyatani",
-                  "https://linkedin.com/company/dukesyatani"
-                ]
-              })
-            }}
-          />
+        <Header />
+        <main id="main-content" className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
 
-          {/* Layout Components */}
-          <Header />
-          <main id="main-content" className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-
-          {/* WhatsApp Float - Only in Production */}
-          {isProduction && <WhatsAppFloat />}
-        
+        {isProduction && <WhatsAppFloat />}
       </body>
     </html>
   )

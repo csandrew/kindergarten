@@ -86,22 +86,17 @@ export default function Hero() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-5xl mx-auto backdrop-blur-md bg-black/30 rounded-2xl p-6 md:p-10 border border-white/20">
-            <h1 className="text-3xl md:text-6xl font-heading font-bold mb-4 text-white">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 text-white">
               Welcome to Dukes Yatani
               <span className="block text-xl md:text-3xl mt-2 text-secondary">
-                Where Young Minds Grow, Explore, and Shine
+                Where young minds get Nurtured and Inspired
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-100 leading-relaxed">
-              <span className="hidden sm:inline">
+              <span className=" text-1xl sm:inline">
                 At Dukes Kindergarten, we provide a nurturing, safe, and stimulating environment
-                where every child is encouraged to discover their potential. Through play-based
-                learning, creativity, and meaningful experiences, we lay the foundation for
-                lifelong learning and success.
-              </span>
-              <span className="sm:hidden">
-                A nurturing, safe environment where children discover their potential through play-based learning.
+                where we lay the foundation for a holistic and successful future.
               </span>
             </p>
 
