@@ -127,14 +127,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Back to Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-4 right-4 bg-secondary text-white p-3 rounded-full shadow-lg hover:bg-secondary/80 transition focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 z-40"
-        aria-label="Back to top"
-      >
-        <span className="text-xl" aria-hidden="true">↑</span>
-      </button>
     </footer>
   )
 }
