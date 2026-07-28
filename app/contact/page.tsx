@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { MapPin, Phone, Mail, Clock, Send, Loader2, ArrowRight, CheckCircle } from 'lucide-react'
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 interface FormData {
   name: string
@@ -39,7 +39,6 @@ const CONTACT_INFO = {
 
 const SOCIAL_LINKS = [
   { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', label: 'Facebook', color: 'text-[#1877f2]' },
-  
   { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', label: 'Instagram', color: 'text-[#e4405f]' },
   { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', label: 'LinkedIn', color: 'text-[#0a66c2]' }
 ]
@@ -82,7 +81,6 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }, [formData])
 
-  // ✅ FIXED: No API call, just simulates success
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -92,7 +90,6 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: '' })
 
     try {
-      // Simulate network delay
       await new Promise(resolve => setTimeout(resolve, 1000))
       
       setSubmitStatus({
@@ -178,7 +175,7 @@ export default function ContactPage() {
                 ))}
 
                 {/* Follow Us Section */}
-                <div className="pt-4 flex-center">
+                <div className="pt-4 text-center">
                   <h3 className="font-heading font-semibold text-lg text-primary mb-4">
                     Follow Us On:
                   </h3>
