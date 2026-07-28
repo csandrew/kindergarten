@@ -52,42 +52,42 @@ export default function AdmissionsPage() {
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {}
-    
+
     if (!formData.childName.trim()) {
       newErrors.childName = 'Child name is required'
     }
-    
+
     const age = parseInt(formData.childAge)
     if (!formData.childAge) {
       newErrors.childAge = 'Age is required'
     } else if (isNaN(age) || age < 2 || age > 6) {
       newErrors.childAge = 'Age must be between 2 and 6 years'
     }
-    
+
     if (!formData.parentName.trim()) {
       newErrors.parentName = 'Parent/Guardian name is required'
     }
-    
+
     if (!formData.parentEmail.trim()) {
       newErrors.parentEmail = 'Email address is required'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.parentEmail)) {
       newErrors.parentEmail = 'Please enter a valid email address'
     }
-    
+
     if (!formData.parentPhone.trim()) {
       newErrors.parentPhone = 'Phone number is required'
     } else if (!/^\+?[0-9\s]{10,13}$/.test(formData.parentPhone.replace(/\s/g, ''))) {
       newErrors.parentPhone = 'Please enter a valid phone number'
     }
-    
+
     if (!formData.program) {
       newErrors.program = 'Please select a program'
     }
-    
+
     if (!formData.preferredStartDate) {
       newErrors.preferredStartDate = 'Preferred start date is required'
     }
-    
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }, [formData])
@@ -109,19 +109,19 @@ export default function AdmissionsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!validateForm()) return
-    
+
     setIsSubmitting(true)
     setSubmitStatus({ type: null, message: '' })
-    
+
     try {
       const response = await fetch(`${API_BASE_URL}/api/enroll`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
-      
+
       if (response.ok) {
         setSubmitStatus({
           type: 'success',
@@ -188,15 +188,6 @@ export default function AdmissionsPage() {
     }
   ]
 
-  const requirements = [
-    'Child must be between 2 and 6 years old',
-    'Copy of birth certificate',
-    'Immunization records',
-    '2 recent passport-size photographs',
-    'Completed application form',
-    'Copy of parents/guardian ID',
-    'Previous school records (if applicable)'
-  ]
 
   const steps = [
     { step: 1, icon: FileText, title: 'Begin Application', desc: 'Download and complete our application form' },
@@ -248,7 +239,7 @@ export default function AdmissionsPage() {
             ))}
           </div>
 
-          {/* Form and Information - Grid Layout */}
+          {/* Form and Information  */}
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left Side - FAQs and Contact */}
             <div>
@@ -283,21 +274,7 @@ export default function AdmissionsPage() {
 
             {/* Right Side - Admission Requirements & Form */}
             <div>
-              {/* Admission Requirements */}
-              <div className="bg-white p-6 rounded-2xl border border-gray-200 mb-6">
-                <h3 className="text-xl font-heading font-bold text-primary mb-4">
-                  Admission Requirements
-                </h3>
-                <ul className="space-y-3">
-                  {requirements.map((req, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="text-secondary w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="text-gray-700">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+              
               {/* Download Button & Form */}
               <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-200">
                 <div className="text-center mb-6">
@@ -351,9 +328,8 @@ export default function AdmissionsPage() {
                             id="childName"
                             type="text"
                             required
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.childName ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.childName ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.childName}
                             onChange={(e) => handleChange('childName', e.target.value)}
                             aria-invalid={!!errors.childName}
@@ -372,9 +348,8 @@ export default function AdmissionsPage() {
                             required
                             min="2"
                             max="6"
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.childAge ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.childAge ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.childAge}
                             onChange={(e) => handleChange('childAge', e.target.value)}
                             aria-invalid={!!errors.childAge}
@@ -393,9 +368,8 @@ export default function AdmissionsPage() {
                           id="parentName"
                           type="text"
                           required
-                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                            errors.parentName ? 'border-red-500' : 'border-gray-300'
-                          }`}
+                          className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.parentName ? 'border-red-500' : 'border-gray-300'
+                            }`}
                           value={formData.parentName}
                           onChange={(e) => handleChange('parentName', e.target.value)}
                           aria-invalid={!!errors.parentName}
@@ -414,9 +388,8 @@ export default function AdmissionsPage() {
                             id="parentEmail"
                             type="email"
                             required
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.parentEmail ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.parentEmail ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.parentEmail}
                             onChange={(e) => handleChange('parentEmail', e.target.value)}
                             aria-invalid={!!errors.parentEmail}
@@ -433,9 +406,8 @@ export default function AdmissionsPage() {
                             id="parentPhone"
                             type="tel"
                             required
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.parentPhone ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.parentPhone ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.parentPhone}
                             onChange={(e) => handleChange('parentPhone', e.target.value)}
                             aria-invalid={!!errors.parentPhone}
@@ -454,9 +426,8 @@ export default function AdmissionsPage() {
                           <select
                             id="program"
                             required
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.program ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.program ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.program}
                             onChange={(e) => handleChange('program', e.target.value)}
                             aria-invalid={!!errors.program}
@@ -479,9 +450,8 @@ export default function AdmissionsPage() {
                             id="preferredStartDate"
                             type="date"
                             required
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${
-                              errors.preferredStartDate ? 'border-red-500' : 'border-gray-300'
-                            }`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition ${errors.preferredStartDate ? 'border-red-500' : 'border-gray-300'
+                              }`}
                             value={formData.preferredStartDate}
                             onChange={(e) => handleChange('preferredStartDate', e.target.value)}
                             aria-invalid={!!errors.preferredStartDate}
@@ -507,10 +477,10 @@ export default function AdmissionsPage() {
                         />
                       </div>
 
-                      <Button 
-                        type="submit" 
-                        variant="primary" 
-                        size="lg" 
+                      <Button
+                        type="submit"
+                        variant="primary"
+                        size="lg"
                         className="w-full"
                         disabled={isSubmitting}
                       >

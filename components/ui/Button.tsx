@@ -1,3 +1,4 @@
+// src/components/ui/Button.tsx
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
@@ -7,11 +8,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-secondary text-white hover:bg-secondary/80 focus:ring-secondary',
-        secondary: 'bg-primary text-white hover:bg-primary/80 focus:ring-primary',
-        outline: 'border-2 border-secondary text-secondary hover:bg-secondary hover:text-white',
+        primary: 'bg-primary text-white hover:bg-primary-dark focus:ring-primary',
+        secondary: 'bg-secondary text-white hover:bg-secondary-dark focus:ring-secondary',
+        outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
         ghost: 'text-white hover:bg-white/20',
-        danger: 'bg-red-600 text-white hover:bg-red-700'
+        danger: 'bg-red-600 text-white hover:bg-red-700',
+        accent: 'bg-accent text-white hover:bg-blue-primary focus:ring-accent',
       },
       size: {
         sm: 'px-4 py-2 text-sm',

@@ -150,7 +150,7 @@ export default function ContactPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
+      <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Contact Us</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>

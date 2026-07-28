@@ -42,14 +42,7 @@ export default function Hero() {
 
   return (
     <>
-      {/* Skip link */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-primary focus:p-4 focus:rounded-lg focus:shadow-lg"
-      >
-        Skip to main content
-      </a>
-
+     
       <section
         id="hero"
         className="relative min-h-[100dvh] flex items-center pt-20 pb-48 md:pb-20 overflow-hidden"
@@ -87,7 +80,7 @@ export default function Hero() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-5xl mx-auto backdrop-blur-md bg-black/30 rounded-2xl p-6 md:p-10 border border-white/20">
             <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4 text-white">
-              Welcome to Dukes Yatani
+              Welcome to E-Springs Junior School
               <span className="block text-xl md:text-3xl mt-2 text-secondary">
                 Where young minds get Nurtured and Inspired
               </span>
@@ -95,7 +88,7 @@ export default function Hero() {
 
             <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 text-gray-100 leading-relaxed">
               <span className=" text-1xl sm:inline">
-                At Dukes Kindergarten, we provide a nurturing, safe, and stimulating environment
+                We provide a nurturing, safe, and stimulating environment
                 where we lay the foundation for a holistic and successful future.
               </span>
             </p>

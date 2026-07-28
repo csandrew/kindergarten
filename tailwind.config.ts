@@ -1,37 +1,32 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
+/** @type {import('tailwindcss').NextConfig} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#2f3e46',
-        secondary: '#84a98c',
-        accent: '#cad2c5',
-        'deep-burgundy': '#800e13',
-        'darker-burgundy': '#640d14',
+        // Brand Colors - NEW PALETTE
+        purple: '#3D186E',
+        pink: '#E04A95',
+        'blue-primary': '#1B68D4',
+        'blue-light': '#69B2BA',
+        
+        // Mapped colors
+        primary: '#3D186E',
+        secondary: '#E04A95',
+        accent: '#69B2BA',
+        'primary-dark': '#2A104A',
+        'primary-light': '#5A2A8E',
+        'secondary-dark': '#B83A7A',
+        'secondary-light': '#F5A0C4',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
-        accent: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+        heading: ['var(--font-poppins)'],
+        body: ['var(--font-inter)'],
+        marcellus: ['var(--font-marcellus)'],
       },
     },
   },

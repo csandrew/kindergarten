@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Shield, Users, Heart, Calendar, GraduationCap, Eye, Target, Award, BookOpen, Sparkles, CheckCircle } from 'lucide-react'
+import { Shield, Users, Heart, ArrowRight, Eye, Target, Award } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -50,6 +50,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      
+
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -59,7 +61,7 @@ export default function AboutPage() {
                 Inspiring a Love for Learning
               </h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Dukes Kindergarten is dedicated to providing quality early childhood education that supports children's intellectual, emotional, social, and physical development.
+                E-Springs is dedicated to providing quality early childhood education that supports children's intellectual, emotional, social, and physical development.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 We believe every child is unique and learns best through exploration, discovery, and play. Our experienced educators create engaging learning experiences that help children develop confidence, curiosity, and independence.
@@ -133,14 +135,14 @@ export default function AboutPage() {
               <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Principal</h3>
               <div className="w-16 h-1 bg-secondary rounded-full mb-4"></div>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Welcome to Dukes Kindergarten! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones.
+                Welcome to E-Springs Junior School! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Our school is committed to providing a warm, inclusive, and stimulating environment where every child can thrive. Together with our dedicated team of educators, we ensure that each child receives the attention, care, and guidance they need to reach their full potential.
               </p>
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <p className="font-heading font-semibold text-primary">Mrs. Jane Mwangi</p>
-                <p className="text-sm text-gray-500">Principal, Dukes Yatani Kindergarten</p>
+                <p className="text-sm text-gray-500">Principal, E-Springs Junior School</p>
               </div>
             </div>
           </div>
@@ -175,18 +177,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 bg-secondary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-heading font-bold mb-4">Ready to Join the Dukes Family?</h3>
-          <p className="text-white/90 max-w-2xl mx-auto mb-6">Give your child the best start in life.</p>
+      {/* CTA - Matching Admissions Page Style */}
+      <div className="container mx-auto px-4 pb-16">
+        <div className="bg-secondary rounded-2xl p-8 text-center text-white">
+          <h3 className="text-2xl font-heading font-bold mb-3">
+            Ready to Begin Your Child's Journey?
+          </h3>
+          <p className="text-white/90 max-w-2xl mx-auto mb-6">
+            Download the application form, complete it, and submit it with the required documents to secure your child's spot.
+          </p>
           <Link href="/admissions">
-            <Button variant="secondary" size="lg">
-              Enroll Now <CheckCircle size={18} className="ml-2" />
+            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl">
+              Enroll Now <ArrowRight size={18} className="ml-2" />
             </Button>
           </Link>
         </div>
-      </section>
+      </div>
     </main>
   )
 }

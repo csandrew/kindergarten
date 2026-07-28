@@ -6,15 +6,15 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const SOCIAL_LINKS = [
   { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', color: '#1877f2', label: 'Facebook' },
-  { icon: FaTwitter, href: 'https://twitter.com/dukesyatani', color: '#1da1f2', label: 'Twitter' },
+  
   { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', color: '#e4405f', label: 'Instagram' },
   { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', color: '#0a66c2', label: 'LinkedIn' }
 ]
 
 const CONTACT_INFO = {
-  address: 'Yatani Road, Nairobi, Kenya',
+  address: 'Umoja One, Peacock - Nairobi, Kenya',
   phone: '+254 700 000 000',
-  email: 'info@dukesyatani.ac.ke',
+  email: 'info@espringsjuniorschool.ac.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
     weekend: 'Closed',
@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto,auto,auto,auto] gap-8 mb-12">
           {/* About */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">Dukes Yatani Kindergarten</h3>
+            <h3 className="text-xl font-heading font-bold mb-4">E-Springs Junior School</h3>
             <p className="text-gray-300">Nurturing young minds since 2010</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-600 pt-8 text-sm text-gray-400">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; {new Date().getFullYear()} Dukes Yatani Kindergarten. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} E-Springs Junior School. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link
                 href="/terms"

@@ -10,7 +10,7 @@ const testimonials = [
     childName: 'Ethan Mwangi',
     content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
     rating: 5,
-    image: '/images/testimonials/parent-1.jpg',
+    
     fallbackColor: '#2f3e46'
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
     childName: 'Maya Ochieng',
     content: 'The school\'s nurturing atmosphere and engaging activities have made learning enjoyable for our child every day. We couldn\'t be happier with our choice.',
     rating: 5,
-    image: '/images/testimonials/parent-2.jpg',
+    
     fallbackColor: '#84a98c'
   },
   {
@@ -26,7 +26,7 @@ const testimonials = [
     childName: 'Liam Wanjiku',
     content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend Dukes!',
     rating: 5,
-    image: '/images/testimonials/parent-3.jpg',
+    
     fallbackColor: '#cad2c5'
   },
   {
@@ -34,7 +34,7 @@ const testimonials = [
     childName: 'Sophia Kimani',
     content: 'Dukes Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
     rating: 5,
-    image: '/images/testimonials/parent-4.jpg',
+   
     fallbackColor: '#800e13'
   }
 ]

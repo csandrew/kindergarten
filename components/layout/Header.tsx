@@ -62,11 +62,11 @@ export default function Header() {
             <Link 
               href="/" 
               className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
-              aria-label="Dukes Yatani Kindergarten - Home"
+              aria-label="E-Springs Junior School - Home"
             >
               <Image
                 src="/images/logo.png"
-                alt="Dukes Yatani Kindergarten Logo"
+                alt="E-Springs Junior School Logo"
                 width={48}
                 height={48}
                 className="h-10 w-auto"
@@ -74,14 +74,14 @@ export default function Header() {
               />
               <div className="hidden sm:block">
                 <span className={`font-marcellus text-lg font-bold ${
-                  isScrolled ? 'text-primary' : 'text-white'
+                  isScrolled ? 'text-primary' : 'text-primary'
                 }`}>
-                  Dukes Yatani
+                  E-Springs
                 </span>
                 <span className={`block text-xs ${
-                  isScrolled ? 'text-gray-500' : 'text-gray-200'
+                  isScrolled ? 'text-gray-600' : 'text-gray-600'
                 }`}>
-                  Kindergarten
+                  Junior School
                 </span>
               </div>
             </Link>
@@ -96,12 +96,12 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary rounded px-2 py-1 whitespace-nowrap ${
+                  className={`font-medium transition hover:text-secondary focus:outline-none focus:underline focus:underline-secondary rounded px-2 py-1 whitespace-nowrap ${
                     isActive(item.href)
                       ? 'text-secondary font-semibold'
                       : isScrolled 
                         ? 'text-primary' 
-                        : 'text-white hover:text-secondary'
+                        : 'text-gray-500 hover:text-secondary'
                   }`}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                 >

@@ -92,7 +92,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                About Dukes Yatani
+                About E-Springs
               </h2>
               <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
               <p className="text-gray-200 leading-relaxed mb-4">

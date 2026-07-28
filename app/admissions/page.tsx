@@ -47,16 +47,7 @@ export default function AdmissionsPage() {
     )
   }
 
-  const requirements = [
-    'Child must be between 2 and 6 years old',
-    'Copy of birth certificate',
-    'Immunization records',
-    '2 recent passport-size photographs',
-    'Completed application form',
-    'Copy of parents/guardian ID',
-    'Previous school records (if applicable)',
-    'Medical examination report'
-  ]
+ 
 
   const steps = [
     { step: 1, icon: FileText, title: 'Review Requirements', desc: 'Check all admission requirements and prepare documents' },
@@ -83,7 +74,7 @@ export default function AdmissionsPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
+      <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Admissions</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
@@ -127,20 +118,10 @@ export default function AdmissionsPage() {
             ))}
           </div>
 
-          {/* Requirements & Downloads */}
+          {/* Downloads */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200">
-              <h3 className="text-xl font-heading font-bold text-primary mb-4">
-                Admission Requirements
-              </h3>
-              <ul className="space-y-3 mb-8">
-                {requirements.map((req, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle className="text-secondary w-5 h-5 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                    <span className="text-gray-700">{req}</span>
-                  </li>
-                ))}
-              </ul>
+             
 
               <div className="border-t border-gray-200 pt-6">
                 <h4 className="text-lg font-heading font-bold text-primary mb-4">
@@ -237,7 +218,7 @@ export default function AdmissionsPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-12 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center text-white">
+          <div className="mt-12 bg-secondary rounded-2xl p-8 text-center text-white">
             <h3 className="text-2xl font-heading font-bold mb-3">
               Ready to Begin Your Child's Journey?
             </h3>

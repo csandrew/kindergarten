@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import {
-  BookOpen, Calculator, Brain, Globe, Palette, Heart,
-  Music, Trophy, Leaf, Users, Sparkles, CheckCircle,
+  Users, Heart,
+  CheckCircle,
   ArrowRight, Clock, Award, Star
 } from 'lucide-react'
 
@@ -56,23 +56,9 @@ export default function ProgramsPage() {
     },
   ]
 
-
-
   const filteredPrograms = activeTab === 'all'
     ? programs
     : programs.filter(p => p.id === activeTab)
-
-  const scrollToAdmissions = useCallback(() => {
-    const element = document.getElementById('admissions')
-    const header = document.querySelector('header')
-    if (element) {
-      const offset = header?.offsetHeight || 80
-      window.scrollTo({
-        top: element.offsetTop - offset,
-        behavior: 'smooth'
-      })
-    }
-  }, [])
 
   return (
     <main className="pt-24">
@@ -86,10 +72,6 @@ export default function ProgramsPage() {
           </p>
         </div>
       </section>
-
-
-    
-
 
       {/* Programs Grid */}
       <section className="py-16 bg-gray-50">
@@ -166,10 +148,6 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-
-
-
-
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -199,18 +177,22 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-12 bg-secondary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-heading font-bold mb-4">Ready to Enroll?</h3>
-          <p className="text-white/90 max-w-2xl mx-auto mb-6">Give your child the best start in their educational journey</p>
+      {/* CTA - Matching Admissions Page Style */}
+      <div className="container mx-auto px-4 pb-16">
+        <div className="bg-secondary rounded-2xl p-8 text-center text-white">
+          <h3 className="text-2xl font-heading font-bold mb-3">
+            Ready to Begin Your Child's Journey?
+          </h3>
+          <p className="text-white/90 max-w-2xl mx-auto mb-6">
+            Give your child the best start in life. Join the Dukes family today.
+          </p>
           <Link href="/admissions">
-            <Button variant="secondary" size="lg">
-              Enroll Now <CheckCircle size={18} className="ml-2" />
+            <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl">
+              Enroll Now <ArrowRight size={18} className="ml-2" />
             </Button>
           </Link>
         </div>
-      </section>
+      </div>
     </main>
   )
 }
