@@ -1,7 +1,6 @@
 // src/components/sections/Testimonials.tsx
 'use client'
 import { useState, useEffect, useCallback } from 'react'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Star, User } from 'lucide-react'
 
 const testimonials = [
@@ -10,39 +9,45 @@ const testimonials = [
     childName: 'Ethan Mwangi',
     content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
     rating: 5,
-    
-    fallbackColor: '#2f3e46'
+    initials: 'SM'
   },
   {
     name: 'David Ochieng',
     childName: 'Maya Ochieng',
     content: 'The school\'s nurturing atmosphere and engaging activities have made learning enjoyable for our child every day. We couldn\'t be happier with our choice.',
     rating: 5,
-    
-    fallbackColor: '#84a98c'
+    initials: 'DO'
   },
   {
     name: 'Grace Wanjiku',
     childName: 'Liam Wanjiku',
     content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend Dukes!',
     rating: 5,
-    
-    fallbackColor: '#cad2c5'
+    initials: 'GW'
   },
   {
     name: 'Michael Kimani',
     childName: 'Sophia Kimani',
     content: 'Dukes Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
     rating: 5,
-   
-    fallbackColor: '#800e13'
+    initials: 'MK'
   }
+]
+
+const colors = [
+  'bg-purple-600',
+  'bg-pink-500',
+  'bg-blue-500',
+  'bg-green-500',
+  'bg-orange-500',
+  'bg-red-500',
+  'bg-indigo-500',
+  'bg-teal-500'
 ]
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({})
 
   const nextTestimonial = useCallback(() => {
     setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
@@ -77,9 +82,9 @@ export default function Testimonials() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [prevTestimonial, nextTestimonial])
 
-  const handleImageError = useCallback((index: number) => {
-    setImageErrors(prev => ({ ...prev, [index]: true }))
-  }, [])
+  const getColor = (index: number) => {
+    return colors[index % colors.length]
+  }
 
   return (
     <section id="testimonials" className="py-16 md:py-20 bg-gradient-to-br from-secondary/20 to-primary/10">
@@ -126,27 +131,9 @@ export default function Testimonials() {
               </div>
 
               <div className="flex items-center justify-center gap-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gradient-to-r from-secondary to-primary p-0.5">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
-                    {!imageErrors[current] ? (
-                      <Image
-                        src={testimonials[current].image}
-                        alt={`${testimonials[current].name}, parent of ${testimonials[current].childName}`}
-                        width={64}
-                        height={64}
-                        className="object-cover w-full h-full"
-                        onError={() => handleImageError(current)}
-                        unoptimized={true} // Add this for development
-                      /> 
-                    ) : (
-                      <div 
-                        className="w-full h-full flex items-center justify-center text-white text-2xl font-bold"
-                        style={{ backgroundColor: testimonials[current].fallbackColor }}
-                      >
-                        {testimonials[current].name.charAt(0)}
-                      </div>
-                    )}
-                  </div>
+                {/* Avatar - Initials only, no image */}
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold ${getColor(current)}`}>
+                  {testimonials[current].initials}
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-primary text-lg">
