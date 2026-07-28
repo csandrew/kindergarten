@@ -33,7 +33,7 @@ const marcellus = Marcellus({
 export const metadata: Metadata = {
   metadataBase: new URL('https://espringsjuniorschool.ac.ke'),
   title: {
-    default: 'E-Springs Junior School | Where Young Minds Grow, Explore, and Shine',
+    default: 'E-Springs Junior School',
     template: '%s |E-Springs Junior School',
   },
   description: 'Premier kindergarten in Umoja one offering play-based learning for children.',
