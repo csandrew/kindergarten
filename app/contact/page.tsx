@@ -39,7 +39,7 @@ const CONTACT_INFO = {
 
 const SOCIAL_LINKS = [
   { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', label: 'Facebook', color: 'text-[#1877f2]' },
-  { icon: FaTwitter, href: 'https://twitter.com/dukesyatani', label: 'Twitter', color: 'text-[#1da1f2]' },
+  
   { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', label: 'Instagram', color: 'text-[#e4405f]' },
   { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', label: 'LinkedIn', color: 'text-[#0a66c2]' }
 ]
