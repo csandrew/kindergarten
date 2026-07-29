@@ -31,29 +31,29 @@ const marcellus = Marcellus({
 
 // Metadata Configuration
 export const metadata: Metadata = {
-  metadataBase: new URL('https://espringsjuniorschool.ac.ke'),
+  metadataBase: new URL('https://espringsjuniorprimary.ac.ke'),
   title: {
-    default: 'E-Springs Junior School',
-    template: '%s |E-Springs Junior School',
+    default: 'E-Springs Junior Primary',
+    template: '%s |E-Springs Junior Primary',
   },
   description: 'Premier kindergarten in Umoja one offering play-based learning for children.',
-  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, E-Springs Junior School',
-  authors: [{ name: 'E-Springs Junior School' }],
+  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, E-Springs Junior Primary',
+  authors: [{ name: 'E-Springs Junior Primary' }],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Dukes Yatani Kindergarten',
-    description: 'Premier kindergarten in Yatani offering play-based learning for children aged 2-6 years.',
-    url: 'https://espringsjuniorschool.ac.ke',
-    siteName: 'E-Springs Junior School',
+    title: 'E-Springs Junior Primary',
+    description: 'Premier kindergarten in Umoja One offering play-based learning for children aged 2-6 years.',
+    url: 'https://espringsjuniorprimary.ac.ke',
+    siteName: 'E-Springs Junior Primary',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'E-Springs Junior School',
+        alt: 'E-Springs Junior Primary',
       },
     ],
     locale: 'en_KE',
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'E-Springs Junior School',
-    description: 'Premier kindergarten in Yatani offering play-based learning.',
+    title: 'E-Springs Junior Primary',
+    description: 'Premier kindergarten in Umoja One offering play-based learning.',
     images: ['/images/twitter-image.jpg'],
   },
   icons: {

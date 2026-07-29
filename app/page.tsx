@@ -5,7 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
-import { ArrowRight, Shield, Users, Star, TrendingUp, GraduationCap, Calendar } from 'lucide-react'
+import { ArrowRight, GraduationCap } from 'lucide-react'
 
 //  Use the imported Hero component
 import Hero from '@/components/sections/Hero'

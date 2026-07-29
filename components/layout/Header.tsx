@@ -62,11 +62,11 @@ export default function Header() {
             <Link 
               href="/" 
               className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
-              aria-label="E-Springs Junior School - Home"
+              aria-label="E-Springs Junior Primary - Home"
             >
               <Image
                 src="/images/logo.png"
-                alt="E-Springs Junior School Logo"
+                alt="E-Springs Junior Primary Logo"
                 width={48}
                 height={48}
                 className="h-10 w-auto"
@@ -81,7 +81,7 @@ export default function Header() {
                 <span className={`block text-xs ${
                   isScrolled ? 'text-gray-600' : 'text-gray-600'
                 }`}>
-                  Junior School
+                  Junior Primary
                 </span>
               </div>
             </Link>

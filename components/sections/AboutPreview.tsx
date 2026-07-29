@@ -60,7 +60,7 @@ export default function About() {
             </h3>
 
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Dukes Kindergarten is dedicated to providing quality early childhood education that
+              E-Springs is dedicated to providing quality early childhood education that
               supports children's intellectual, emotional, social, and physical development.
             </p>
 
@@ -151,14 +151,14 @@ export default function About() {
             <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Principal</h3>
             <div className="w-16 h-1 bg-secondary rounded-full mb-4"></div>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to Dukes Kindergarten! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones. 
+              Welcome to E-Springs Junior Primary! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones. 
             </p>
             <p className="text-gray-700 leading-relaxed">
               Our school is committed to providing a warm, inclusive, and stimulating environment where every child can thrive. Together with our dedicated team of educators, we ensure that each child receives the attention, care, and guidance they need to reach their full potential.
             </p>
             <div className="mt-6 pt-4 border-t border-gray-200">
               <p className="font-heading font-semibold text-primary">Mrs. Jane Mwangi</p>
-              <p className="text-sm text-gray-500">Principal, Dukes Yatani Kindergarten</p>
+              <p className="text-sm text-gray-500">Principal, E-Springs Junior Primary</p>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function About() {
         {/* Why Choose Us Preview */}
         <div className="mt-16 bg-primary rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-heading font-bold text-white mb-4">
-            Why Choose Dukes Kindergarten?
+            Why Choose E-Springs?
           </h3>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             {[

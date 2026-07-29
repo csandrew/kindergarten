@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { 
   ChevronLeft, ChevronRight, Star, BookOpen, Calculator, 
-  Brain, Globe, Palette, Heart, Music, Trophy, Leaf, Users, Sparkles, CheckCircle 
+  Brain, Palette, Heart, Music
 } from 'lucide-react'
 
 // Section Header Component

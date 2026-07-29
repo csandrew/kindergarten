@@ -7,7 +7,7 @@ const testimonials = [
   {
     name: 'Sarah Mwangi',
     childName: 'Ethan Mwangi',
-    content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
+    content: 'Esprings has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
     rating: 5,
     initials: 'SM'
   },
@@ -28,7 +28,7 @@ const testimonials = [
   {
     name: 'Michael Kimani',
     childName: 'Sophia Kimani',
-    content: 'Dukes Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
+    content: 'E-springs has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
     rating: 5,
     initials: 'MK'
   }
