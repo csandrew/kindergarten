@@ -61,7 +61,7 @@ export default function ProgramsPage() {
     : programs.filter(p => p.id === activeTab)
 
   return (
-    <main className="pt-24">
+    <main className="pt-24 ">
       {/* Hero */}
       <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">

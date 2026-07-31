@@ -49,7 +49,7 @@ const ProgramCard = ({ program, onEnroll }: {
   const [imageError, setImageError] = useState(false)
   
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+    <div className=" bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
       <div className="relative h-48 bg-gray-200">
         {!imageError ? (
           <Image

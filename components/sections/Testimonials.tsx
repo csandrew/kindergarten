@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: 'Grace Wanjiku',
     childName: 'Liam Wanjiku',
-    content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend Dukes!',
+    content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend E-Springs!',
     rating: 5,
     initials: 'GW'
   },

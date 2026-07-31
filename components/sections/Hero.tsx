@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero/hero.jpg"
-            alt="Dukes Yatani Kindergarten - Happy children learning and playing together"
+            alt="E-Springs Kindergarten - Happy children learning and playing together"
             fill
             priority
             className="object-cover"
@@ -78,9 +78,9 @@ export default function Hero() {
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-5xl mx-auto backdrop-blur-md bg-black/30 rounded-2xl p-6 md:p-10 border border-white/20">
+          <div className="max-w-5xl mx-auto backdrop-blur-sd bg-black/30 rounded-2xl p-6 md:p-10 border border-white/20">
             <h1 className="text-3xl md:text-6xl font-heading font-bold mb-4 text-white">
-              Welcome to E-Springs Junior Primary
+              Welcome to E-Springs Kindergarten
               <span className="block text-xl md:text-3xl mt-2 text-secondary">
                 Where young minds get Nurtured and Inspired
               </span>

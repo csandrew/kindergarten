@@ -10,7 +10,7 @@ interface WhatsAppFloatProps {
 
 export default memo(function WhatsAppFloat({
   phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '254700000000',
-  message = "Hello Dukes Yatani, I'd like to learn more about your kindergarten"
+  message = "Hello, I'd like to learn more about E-Springs Kindergarten"
 }: WhatsAppFloatProps) {
   const [isVisible, setIsVisible] = useState(false)
 

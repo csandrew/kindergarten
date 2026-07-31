@@ -62,11 +62,11 @@ export default function Header() {
             <Link 
               href="/" 
               className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg"
-              aria-label="E-Springs Junior Primary - Home"
+              aria-label="E-Springs Kindergarten - Home"
             >
               <Image
                 src="/images/logo.png"
-                alt="E-Springs Junior Primary Logo"
+                alt="E-Springs Kindergarten Logo"
                 width={48}
                 height={48}
                 className="h-10 w-auto"
@@ -81,7 +81,7 @@ export default function Header() {
                 <span className={`block text-xs ${
                   isScrolled ? 'text-gray-600' : 'text-gray-600'
                 }`}>
-                  Junior Primary
+                  Kindergarten
                 </span>
               </div>
             </Link>
@@ -96,7 +96,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition hover:text-secondary focus:outline-none focus:underline focus:underline-secondary rounded px-2 py-1 whitespace-nowrap ${
+                  className={`font-medium transition hover:text-secondary focus:outline-none focus:underline focus:underline-offset-4 focus:decoration-2 focus:decoration-secondary rounded px-2 py-1 whitespace-nowrap ${
                     isActive(item.href)
                       ? 'text-secondary font-semibold'
                       : isScrolled 

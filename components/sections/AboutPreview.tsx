@@ -127,7 +127,7 @@ export default function About() {
           <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
             <Image
               src="/images/about/principal.jpg"
-              alt="Principal Mrs. Jane Mwangi of Dukes Yatani Kindergarten"
+              alt="Mrs. Jane Mwangi Principal E-Springs Kindergarten"
               fill
               className="object-cover hover:scale-105 transition duration-500"
               placeholder="blur"
@@ -151,14 +151,14 @@ export default function About() {
             <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Principal</h3>
             <div className="w-16 h-1 bg-secondary rounded-full mb-4"></div>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to E-Springs Junior Primary! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones. 
+              Welcome to E-Springs Kindergarten! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones. 
             </p>
             <p className="text-gray-700 leading-relaxed">
               Our school is committed to providing a warm, inclusive, and stimulating environment where every child can thrive. Together with our dedicated team of educators, we ensure that each child receives the attention, care, and guidance they need to reach their full potential.
             </p>
             <div className="mt-6 pt-4 border-t border-gray-200">
               <p className="font-heading font-semibold text-primary">Mrs. Jane Mwangi</p>
-              <p className="text-sm text-gray-500">Principal, E-Springs Junior Primary</p>
+              <p className="text-sm text-gray-500">Principal, E-Springs Kindergarten</p>
             </div>
           </div>
         </div>

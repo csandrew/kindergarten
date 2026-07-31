@@ -12,13 +12,13 @@ const SOCIAL_LINKS = [
 ]
 
 const CONTACT_INFO = {
-  address: 'Umoja One, Peacock - Nairobi, Kenya',
+  address: 'Umoja One - Peacock. Nairobi',
   phone: '+254 700 000 000',
-  email: 'info@espringsjuniorprimary.ac.ke',
+  email: 'info@espringskindergarten.ac.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
     weekend: 'Closed',
-    daycare: 'Available every day'
+    daycare: 'available every day'
   }
 }
 
@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto,auto,auto,auto] gap-8 mb-12">
           {/* About */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">E-Springs Junior Primary</h3>
+            <h3 className="text-xl font-heading font-bold mb-4">E-Springs Kindergarten</h3>
             <p className="text-gray-300">Nurturing young minds since 2010</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
@@ -100,7 +100,7 @@ export default function Footer() {
             <div className="space-y-2 text-gray-300">
               <p>Monday - Friday: {CONTACT_INFO.hours.weekdays}</p>
               <p>Saturday - Sunday: {CONTACT_INFO.hours.weekend}</p>
-              <p className="text-sm text-gray-400 mt-2">* Daycare {CONTACT_INFO.hours.daycare}</p>
+              <p className="text-sm text-gray-400 mt-2">* Childcare {CONTACT_INFO.hours.daycare}</p>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-600 pt-8 text-sm text-gray-400">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; {new Date().getFullYear()}E-Springs Junior Primary. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} E-Springs Kindergarten. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link
                 href="/terms"

@@ -57,11 +57,11 @@ export default function WhyChooseUs() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
-            Why Choose Dukes Yatani?
+            Why Choose E-Springs?
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
           <p className="text-gray-600 mt-4">
-            Discover what makes Dukes Yatani the perfect place for your child's early learning journey
+            Discover what makes E-Springs Kindergarten the perfect place for your child's early learning journey
           </p>
         </div>
 
