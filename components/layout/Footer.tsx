@@ -1,30 +1,30 @@
 // src/components/layout/Footer.tsx
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const SOCIAL_LINKS = [
-  { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', color: '#1877f2', label: 'Facebook' },
-  
-  { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', color: '#e4405f', label: 'Instagram' },
-  { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', color: '#0a66c2', label: 'LinkedIn' }
+  { icon: FaFacebook, href: 'https://facebook.com/espringsjunior', color: '#1877f2', label: 'Facebook' },
+  { icon: FaInstagram, href: 'https://instagram.com/espringsjunior', color: '#e4405f', label: 'Instagram' },
+  { icon: FaLinkedin, href: 'https://linkedin.com/company/espringsjunior', color: '#0a66c2', label: 'LinkedIn' }
 ]
 
 const CONTACT_INFO = {
-  address: 'Umoja One - Peacock. Nairobi',
+  address: 'Umoja One - Peacock, Nairobi',
   phone: '+254 700 000 000',
   email: 'info@espringskindergarten.ac.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
     weekend: 'Closed',
-    daycare: 'available every day'
+    daycare: 'Available every day'
   }
 }
 
 export default function Footer() {
   const quickLinks = [
-    {name: 'Home', href : '/about'},
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Our Programs', href: '/programs' },
     { name: 'Admissions', href: '/admissions' }
@@ -34,9 +34,22 @@ export default function Footer() {
     <footer className="bg-primary text-white pt-16 pb-8" role="contentinfo" aria-label="Site footer">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[auto,auto,auto,auto] gap-8 mb-12">
-          {/* About */}
+          {/* About - With Logo */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">E-Springs Kindergarten</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-12 h-12 flex-shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="E-Springs Kindergarten Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div>
+                <h3 className="text-xl font-heading font-bold">E-Springs</h3>
+                <p className="text-md text-gray-300">Junior School</p>
+              </div>
+            </div>
             <p className="text-gray-300">Nurturing young minds since 2010</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
@@ -126,7 +139,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
     </footer>
   )
 }

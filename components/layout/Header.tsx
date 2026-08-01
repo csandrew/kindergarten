@@ -74,12 +74,12 @@ export default function Header() {
               />
               <div className="hidden sm:block">
                 <span className={`font-marcellus text-lg font-bold ${
-                  isScrolled ? 'text-primary' : 'text-primary'
+                  isScrolled ? 'text-primary' : 'text-white'
                 }`}>
                   E-Springs
                 </span>
                 <span className={`block text-xs ${
-                  isScrolled ? 'text-gray-600' : 'text-gray-600'
+                  isScrolled ? 'text-gray-600' : 'text-gray-300'
                 }`}>
                   Kindergarten
                 </span>
@@ -100,8 +100,8 @@ export default function Header() {
                     isActive(item.href)
                       ? 'text-secondary font-semibold'
                       : isScrolled 
-                        ? 'text-primary' 
-                        : 'text-gray-500 hover:text-secondary'
+                        ? 'text-primary hover:text-secondary' 
+                        : 'text-white hover:text-secondary'
                   }`}
                   aria-current={isActive(item.href) ? 'page' : undefined}
                 >

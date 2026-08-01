@@ -11,7 +11,7 @@ export default function AdmissionsPage() {
   const steps = [
     { step: 1, icon: FileText, title: 'Review Requirements', desc: 'Check all admission requirements and download the checklist' },
     { step: 2, icon: Download, title: 'Download Forms', desc: 'Download and complete the required forms' },
-    { step: 3, icon: Users, title: 'Submit Application', desc: 'Submit completed forms and required documents' },
+    { step: 3, icon: Users, title: 'Visit Us', desc: 'Visit and submit completed forms and required documents' },
     { step: 4, icon: CheckCircle, title: 'Enrollment Confirmation', desc: 'Receive confirmation and secure your child\'s spot' }
   ]
 
@@ -49,7 +49,7 @@ export default function AdmissionsPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
+      <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Admissions</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
@@ -130,7 +130,7 @@ export default function AdmissionsPage() {
             </div>
 
             {/* Contact Admissions Team */}
-            <div className="mt-10 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-2xl text-center">
+            {/*<div className="mt-10 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-2xl text-center">
               <p className="text-gray-700 mb-4 font-medium">
                 Have more questions about admissions?
               </p>
@@ -139,11 +139,11 @@ export default function AdmissionsPage() {
                   Contact Admissions Team <ArrowRight size={18} className="ml-2" />
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Call to Action */}
-          <div className="mt-12 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-center text-white">
+          <div className="mt-12 bg-secondary rounded-2xl p-8 text-center text-white">
             <h3 className="text-2xl font-heading font-bold mb-3">
               Ready to Begin Your Child's Journey?
             </h3>

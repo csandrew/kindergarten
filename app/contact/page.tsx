@@ -26,7 +26,7 @@ interface SubmitStatus {
 }
 
 const CONTACT_INFO = {
-  address: 'Yatani Road, off Lang\'ata Road, Nairobi, Kenya',
+  address: 'Umoja One - Peacock, Nairobi',
   phone: '+254 700 000 000',
   email: 'info@esprongsjunior.co.ke',
   hours: {
@@ -48,7 +48,7 @@ const MAP_EMBED_URL = process.env.NEXT_PUBLIC_MAP_EMBED_URL || ''
 const faqs = [
   {
     question: "What are the admission requirements?",
-    answer: "Applicants must provide a birth certificate, immunization records, a recent photograph, and completed application forms. Age requirements vary by program: Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1 & 2 (6-8 years)."
+    answer: "Applicants must provide a birth certificate, medical records, a recent photograph, and completed application forms. Age requirements vary by program: Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1 & 2 (6-8 years)."
   },
   {
     question: "When is the application deadline?",
@@ -191,7 +191,7 @@ export default function ContactPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
+      <section className="relative bg-primary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Contact Us</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
@@ -241,7 +241,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Links */}
-              <div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
+              {/*<div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
                 <h3 className="font-heading font-semibold text-lg text-primary mb-4">
                   Quick Links
                 </h3>
@@ -256,7 +256,9 @@ export default function ContactPage() {
                     → Fee Structure
                   </Link>
                 </div>
-              </div>
+              </div> */}
+
+
             </div>
 
             {/* Right Side - Contact Form */}
@@ -371,7 +373,7 @@ export default function ContactPage() {
                     ) : (
                       <>
                         <Send size={18} className="mr-2 group-hover:translate-x-1 transition" />
-                        Send Message →
+                        Send Message
                       </>
                     )}
                   </Button>
