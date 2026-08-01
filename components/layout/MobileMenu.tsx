@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { X, Send } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -32,15 +33,29 @@ export default function MobileMenu({ isOpen, onClose, navItems, isActive }: Mobi
       
       {/* Menu Panel - Light background for contrast */}
       <div ref={menuRef} className="absolute right-0 top-0 h-full w-64 bg-white shadow-xl p-6">
-        <button
-          onClick={onClose}
-          className="float-right text-gray-600 hover:text-primary transition"
-          aria-label="Close menu"
-        >
-          <X size={24} />
-        </button>
+        {/* Logo & Close Button */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-2">
+            <div className="relative w-8 h-8">
+              <Image
+                src="/images/logo.png"
+                alt="E-Springs Kindergarten"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <span className="font-heading font-bold text-primary text-sm">E-Springs</span>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-gray-600 hover:text-primary transition"
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
 
-        <nav className="mt-12 flex flex-col space-y-6">
+        <nav className="flex flex-col space-y-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
