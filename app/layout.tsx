@@ -23,7 +23,7 @@ const poppins = Poppins({
 })
 
 const marcellus = Marcellus({
-  weight: '400', 
+  weight: '400',
   subsets: ['latin'],
   variable: '--font-marcellus',
   display: 'swap'
@@ -33,47 +33,44 @@ const marcellus = Marcellus({
 export const metadata: Metadata = {
   metadataBase: new URL('https://espringsjuniorprimary.ac.ke'),
   title: {
-    default: 'E-Springs Junior Primary',
-    template: '%s |E-Springs Junior Primary',
+    default: 'E-Springs Junior School',
+    template: '%s | E-Springs Junior School',
   },
-  description: 'Premier kindergarten in Umoja one offering play-based learning for children.',
-  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, E-Springs Junior Primary',
-  authors: [{ name: 'E-Springs Junior Primary' }],
+  description: 'Premier kindergarten in Umoja One offering play-based learning for children.',
+  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, E-Springs Junior School',
+  authors: [{ name: 'E-Springs Junior School' }],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'E-Springs Junior Primary',
+    title: 'E-Springs Junior School',
     description: 'Premier kindergarten in Umoja One offering play-based learning for children aged 2-6 years.',
     url: 'https://espringsjuniorprimary.ac.ke',
-    siteName: 'E-Springs Junior Primary',
+    siteName: 'E-Springs Junior School',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'E-Springs Junior Primary',
+        alt: 'E-Springs Junior School',
       },
     ],
     locale: 'en_KE',
     type: 'website',
   },
+
+
   twitter: {
     card: 'summary_large_image',
-    title: 'E-Springs Junior Primary',
-    description: 'Premier kindergarten in Umoja One offering play-based learning.',
+    title: 'E-Springs Junior School',
+    description: 'Premier kindergarten in Umoja One offering play-based learning for children aged 2-6 years.',
     images: ['/images/twitter-image.jpg'],
   },
+
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   manifest: '/site.webmanifest',
 }
@@ -102,12 +99,13 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} ${marcellus.variable} scroll-smooth`}
     >
       <head>
-        {/* Only preconnect for critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* ✅ Single favicon reference */}
+        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className="font-sans antialiased">
-        {/* Google Analytics */}
         {GA_MEASUREMENT_ID && isProduction && (
           <>
             <Script
