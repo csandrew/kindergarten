@@ -7,14 +7,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, GraduationCap } from 'lucide-react'
 
-//  Use the imported Hero component
 import Hero from '@/components/sections/Hero'
 
-// Lazy load components
 const Testimonials = lazy(() => import('@/components/sections/Testimonials'))
 const WhyChooseUs = lazy(() => import('@/components/sections/WhyChooseUs'))
 
-// Section Error Fallback
 const SectionError = ({ componentName }: { componentName: string }) => (
   <div className="p-8 text-center bg-red-50 rounded-lg m-4">
     <h3 className="text-lg font-semibold text-red-700 mb-2">Unable to load {componentName}</h3>
@@ -22,14 +19,12 @@ const SectionError = ({ componentName }: { componentName: string }) => (
   </div>
 )
 
-// Loading Skeleton
 const SectionSkeleton = () => (
   <div className="min-h-[200px] flex items-center justify-center bg-gray-50 rounded-2xl">
     <div className="animate-pulse text-primary font-heading text-lg">Loading...</div>
   </div>
 )
 
-// Program Preview Data
 const programPreviews = [
   { age: '1-3 Years', title: 'Daycare', desc: 'Gentle introduction to learning', href: '/programs#daycare' },
   { age: '3-4 Years', title: 'Playgroup', desc: 'Building communication & independence', href: '/programs#playgroup' },
@@ -40,8 +35,18 @@ const programPreviews = [
 export default function Home() {
   return (
     <>
-      {/* ===== HERO SECTION - Using imported component ===== */}
       <Hero />
+
+      {/* ===== INTRODUCTION - NEW ===== */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 text-center max-w-4xl">
+          <p className="text-lg text-gray-700 leading-relaxed">
+            E-Springs is a faith-based institution committed to ensuring holistic growth and development 
+            of each and every child brought under our care. We provide a safe environment that enables 
+            children to have fun, play, learn, grow, and thrive on a solid and sure foundation.
+          </p>
+        </div>
+      </section>
 
       {/* ===== PROGRAMS PREVIEW ===== */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -86,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== ABOUT PREVIEW ===== */}
+      {/* ===== ABOUT PREVIEW - UPDATED TEXT ===== */}
       <section className="py-16 md:py-20 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -96,10 +101,13 @@ export default function Home() {
               </h2>
               <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
               <p className="text-gray-200 leading-relaxed mb-4">
-                Since 2010, we've been nurturing young minds in a safe, caring environment where every child is guided to discover their potential.
+                E-Springs is a faith-based institution committed to ensuring holistic growth and development 
+                of each and every child brought under our care.
               </p>
               <p className="text-gray-200 leading-relaxed mb-6">
-                Our experienced educators create engaging learning programs that help children develop confidence, curiosity, and independence.
+                We provide a safe environment that enables children to have fun, play, learn, grow, 
+                and thrive on a solid and sure foundation for each child to emerge into his or her 
+                God-ordained destiny.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/about">
@@ -135,8 +143,6 @@ export default function Home() {
           <Testimonials />
         </Suspense>
       </ErrorBoundary>
-
-     
     </>
   )
 }
