@@ -1,10 +1,9 @@
 // src/app/contact/page.tsx
 'use client'
 import { useState, useCallback } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { MapPin, Phone, Mail, Clock, Send, Loader2, ArrowRight, CheckCircle } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, Loader2, ArrowRight,  Plus, Minus } from 'lucide-react'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 interface FormData {
@@ -29,7 +28,7 @@ interface SubmitStatus {
 const CONTACT_INFO = {
   address: 'Yatani Road, off Lang\'ata Road, Nairobi, Kenya',
   phone: '+254 700 000 000',
-  email: 'info@dukesyatani.ac.ke',
+  email: 'info@esprongsjunior.co.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
     weekend: 'Closed',
@@ -38,14 +37,51 @@ const CONTACT_INFO = {
 }
 
 const SOCIAL_LINKS = [
-  { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', label: 'Facebook', color: 'text-[#1877f2]' },
-  { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', label: 'Instagram', color: 'text-[#e4405f]' },
-  { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', label: 'LinkedIn', color: 'text-[#0a66c2]' }
+  { icon: FaFacebook, href: 'https://facebook.com/esprongsjunior', label: 'Facebook', color: 'text-[#1877f2]' },
+  { icon: FaInstagram, href: 'https://instagram.com/esprongsjunior', label: 'Instagram', color: 'text-[#e4405f]' },
+  { icon: FaLinkedin, href: 'https://linkedin.com/company/esprongsjunior', label: 'LinkedIn', color: 'text-[#0a66c2]' }
 ]
 
 const MAP_EMBED_URL = process.env.NEXT_PUBLIC_MAP_EMBED_URL || ''
 
+// FAQs moved from Admissions
+const faqs = [
+  {
+    question: "What are the admission requirements?",
+    answer: "Applicants must provide a birth certificate, immunization records, a recent photograph, and completed application forms. Age requirements vary by program: Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1 & 2 (6-8 years)."
+  },
+  {
+    question: "When is the application deadline?",
+    answer: "Applications are accepted year-round, but we recommend submitting your application at least two weeks before the desired start date to ensure availability."
+  },
+  {
+    question: "Is there a sibling discount?",
+    answer: "Yes, we offer a 10% discount for siblings enrolled simultaneously."
+  },
+  {
+    question: "What is the tuition fee?",
+    answer: "Our tuition fees vary by program and term. Please download the Fee Structure document from our Admissions page for detailed information."
+  },
+  {
+    question: "Can I schedule a tour?",
+    answer: "Absolutely! We encourage parents to tour our facilities and meet our team. Contact us to schedule a visit."
+  },
+  {
+    question: "What is your student-to-teacher ratio?",
+    answer: "We maintain small class sizes with a student-to-teacher ratio of 8:1, ensuring individual attention for every child."
+  },
+  {
+    question: "What documents are needed for admission?",
+    answer: "You will need: Child's birth certificate, immunization records, 2 passport-size photographs, completed application form, copy of parent/guardian ID, previous school records (if applicable), and a medical examination report."
+  },
+  {
+    question: "What programs do you offer?",
+    answer: "We offer Daycare (1-3 years), Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1, and Grade 2."
+  }
+]
+
 export default function ContactPage() {
+  const [openFaqs, setOpenFaqs] = useState<number[]>([0])
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -55,6 +91,14 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({ type: null, message: '' })
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqs(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    )
+  }
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {}
@@ -147,7 +191,7 @@ export default function ContactPage() {
   return (
     <main className="pt-24">
       {/* Hero */}
-      <section className="relative bg-primary text-white py-16">
+      <section className="relative bg-gradient-to-r from-primary to-secondary text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Contact Us</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
@@ -193,6 +237,24 @@ export default function ContactPage() {
                       </a>
                     ))}
                   </div>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
+                <h3 className="font-heading font-semibold text-lg text-primary mb-4">
+                  Quick Links
+                </h3>
+                <div className="space-y-2">
+                  <Link href="/admissions" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
+                    → Admissions - Download Forms
+                  </Link>
+                  <Link href="/requirements" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
+                    → Requirements by Level
+                  </Link>
+                  <Link href="/fees" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
+                    → Fee Structure
+                  </Link>
                 </div>
               </div>
             </div>
@@ -324,12 +386,83 @@ export default function ContactPage() {
             </div>
           </div>
 
+          {/* FAQs Section - Moved from Admissions */}
+          <div className="mt-16">
+            <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200">
+              <h2 className="text-3xl font-heading font-bold text-primary text-center mb-4">
+                Frequently Asked Questions
+              </h2>
+              <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-8"></div>
+              <div className="max-w-4xl mx-auto space-y-2">
+                {faqs.map((faq, idx) => {
+                  const isOpen = openFaqs.includes(idx)
+                  return (
+                    <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+                      <button
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full px-4 py-3 flex items-center justify-between gap-4 text-left hover:bg-gray-50 transition group focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2"
+                        aria-expanded={isOpen}
+                      >
+                        <h4 className="font-semibold text-primary group-hover:text-secondary transition flex-1 text-sm md:text-base">
+                          {faq.question}
+                        </h4>
+                        <span className={`
+                          flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition
+                          ${isOpen 
+                            ? 'bg-secondary text-white' 
+                            : 'bg-gray-100 text-secondary group-hover:bg-gray-200'
+                          }
+                        `}>
+                          {isOpen ? (
+                            <Minus size={16} aria-hidden="true" />
+                          ) : (
+                            <Plus size={16} aria-hidden="true" />
+                          )}
+                        </span>
+                      </button>
+                      
+                      <div
+                        className={`
+                          overflow-hidden transition-all duration-300 ease-in-out
+                          ${isOpen ? 'max-h-[500px]' : 'max-h-0'}
+                        `}
+                      >
+                        <div className="px-4 pb-4 text-gray-600 text-sm">
+                          {faq.answer}
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* Still have questions? */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-xl text-center">
+                <p className="text-gray-700 mb-3 font-medium">
+                  Still have questions? We're here to help!
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <Link href="#contact-form">
+                    <Button variant="primary" size="sm">
+                      Send us a message
+                    </Button>
+                  </Link>
+                  <a href="tel:+254700000000" className="inline-block">
+                    <Button variant="outline" size="sm">
+                      Call us
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Google Map */}
           <div className="mt-12">
             <div className="bg-gray-100 rounded-2xl overflow-hidden h-[400px] relative shadow-md">
               {MAP_EMBED_URL ? (
                 <iframe
-                  title="Dukes Yatani Kindergarten Location Map"
+                  title="E-Springs Junior School Location Map"
                   src={MAP_EMBED_URL}
                   width="100%"
                   height="100%"
@@ -349,11 +482,16 @@ export default function ContactPage() {
               <Button
                 variant="outline"
                 className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition"
-                onClick={() => window.open('https://maps.google.com/?q=Dukes+Yatani+Kindergarten+Nairobi', '_blank')}
+                onClick={() => window.open('https://maps.google.com/?q=Yatani+Road+Nairobi+Kenya', '_blank')}
               >
                 <MapPin size={18} className="mr-2" aria-hidden="true" />
                 Get Directions →
               </Button>
+              <Link href="/admissions" className="flex-1">
+                <Button variant="primary" className="w-full">
+                  Admissions <ArrowRight size={18} className="ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

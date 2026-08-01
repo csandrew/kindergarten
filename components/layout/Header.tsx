@@ -8,7 +8,7 @@ import { Menu } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 import { Button } from '@/components/ui/Button'
 
-// Navigation items - now links to pages, not sections
+// Navigation items - links to pages
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },

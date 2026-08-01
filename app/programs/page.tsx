@@ -108,7 +108,7 @@ export default function ProgramsPage() {
                 <div className="relative h-64 bg-gray-200">
                   <Image
                     src={program.image}
-                    alt={`${program.title} program at Dukes Yatani`}
+                    alt={`${program.title} program at E-Springs Junior School`}
                     fill
                     className="object-cover group-hover:scale-110 transition duration-500"
                     placeholder="blur"
@@ -153,7 +153,7 @@ export default function ProgramsPage() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
-              Why Choose Dukes?
+              Why Choose E-Springs?
             </h2>
             <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
           </div>
@@ -184,7 +184,7 @@ export default function ProgramsPage() {
             Ready to Begin Your Child's Journey?
           </h3>
           <p className="text-white/90 max-w-2xl mx-auto mb-6">
-            Give your child the best start in life. Join the Dukes family today.
+            Give your child the best start in life. Join the E-Springs family today.
           </p>
           <Link href="/admissions">
             <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl">

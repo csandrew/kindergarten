@@ -202,7 +202,7 @@ export default function AdmissionsPage() {
       <section className="relative bg-white text-gray-800 py-16">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
-            Join the Dukes Family
+            Join the E-Springs Family
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
         </div>

@@ -95,7 +95,7 @@ export default function Testimonials() {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
           <p className="text-gray-600 mt-4">
-            Hear from our happy families about their experience at Dukes Yatani
+            Hear from our happy families about their experience at E-Springs Junior School
           </p>
         </div>
 

@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Dukes Yatani Kindergarten - our mission, vision, values, and commitment to early childhood education.',
+  description: 'Learn about E-Springs Junior School Kindergarten - our mission, vision, values, and commitment to early childhood education.',
 }
 
 // Constants
@@ -29,7 +29,7 @@ export default function AboutPage() {
   ]
 
   const milestones = [
-    { year: '2010', event: 'Dukes Yatani Kindergarten Founded' },
+    { year: '2010', event: 'E-Springs Junior School Kindergarten Founded' },
     { year: '2012', event: 'Expanded to full-day programs' },
     { year: '2015', event: 'Awarded Best Kindergarten in Yatani' },
     { year: '2018', event: 'Launched STEM early learning program' },

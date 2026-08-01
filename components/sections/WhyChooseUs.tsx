@@ -105,7 +105,7 @@ export default function WhyChooseUs() {
               Ready to Give Your Child the Best Start?
             </h3>
             <p className="text-white/90 mb-6">
-              Join the Dukes family and watch your child grow, explore, and shine in a nurturing environment.
+              Join the E-Springs family and watch your child grow, explore, and shine in a nurturing environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/admissions">

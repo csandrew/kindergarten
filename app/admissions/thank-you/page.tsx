@@ -5,7 +5,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Thank You | Dukes Yatani Kindergarten',
+  title: 'Thank You | E-Springs Junior School Kindergarten',
   description: 'Thank you for your enrollment application. We\'ll contact you within 24 hours.',
   robots: {
     index: false,

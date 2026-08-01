@@ -39,7 +39,7 @@ const CONTACT_INFO = {
 // 🔥 FIXED: Removed color property, will use CSS classes instead
 const SOCIAL_LINKS = [
   { icon: FaFacebook, href: 'https://facebook.com/dukesyatani', label: 'Facebook', colorClass: 'text-[#1877f2] hover:text-[#1877f2]' },
-  { icon: FaTwitter, href: 'https://twitter.com/dukesyatani', label: 'Twitter', colorClass: 'text-[#1da1f2] hover:text-[#1da1f2]' },
+  
   { icon: FaInstagram, href: 'https://instagram.com/dukesyatani', label: 'Instagram', colorClass: 'text-[#e4405f] hover:text-[#e4405f]' },
   { icon: FaLinkedin, href: 'https://linkedin.com/company/dukesyatani', label: 'LinkedIn', colorClass: 'text-[#0a66c2] hover:text-[#0a66c2]' }
 ]
@@ -170,7 +170,7 @@ export default function ContactPage() {
 
         <div className="relative z-10 container mx-auto px-4 text-center">
           <p className="text-xl max-w-5xl mx-auto">
-            Whether you have questions about our programs, want to schedule a tour, or just want to say hello, feel free to reach out. Our team is here to assist you and provide all the information you need about Dukes Yatani Kindergarten.
+            Whether you have questions about our programs, want to schedule a tour, or just want to say hello, feel free to reach out. Our team is here to assist you and provide all the information you need about E-Springs Junior School Kindergarten.
           </p>
         </div>
       </section>
@@ -352,7 +352,7 @@ export default function ContactPage() {
             <div className="bg-gray-100 rounded-2xl overflow-hidden h-[400px] relative shadow-md">
               {MAP_EMBED_URL ? (
                 <iframe
-                  title="Dukes Yatani Kindergarten Location Map"
+                  title="E-Springs Junior School Kindergarten Location Map"
                   src={MAP_EMBED_URL}
                   width="100%"
                   height="100%"
@@ -372,7 +372,7 @@ export default function ContactPage() {
               <Button
                 variant="outline"
                 className="w-full border-primary text-primary hover:bg-primary hover:text-white transition"
-                onClick={() => window.open('https://maps.google.com/?q=Dukes+Yatani+Kindergarten+Nairobi', '_blank')}
+                onClick={() => window.open('https://maps.google.com/?q=E-Springs+Yatani+Kindergarten+Nairobi', '_blank')}
               >
                 <MapPin size={18} className="mr-2" aria-hidden="true" />
                 Get Directions →

@@ -54,7 +54,7 @@ const ProgramCard = ({ program, onEnroll }: {
         {!imageError ? (
           <Image
             src={program.image}
-            alt={`${program.title} program at Dukes Yatani Kindergarten - Ages ${program.age}`}
+            alt={`${program.title} program at E-Springs Junior School Kindergarten - Ages ${program.age}`}
             fill
             className="object-cover group-hover:scale-110 transition duration-300"
             placeholder="blur"
@@ -127,7 +127,7 @@ export default function Programs() {
     {
       name: 'Sarah Mwangi',
       childName: 'Ethan Mwangi',
-      content: 'Dukes Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
+      content: 'E-Springs Kindergarten has provided a wonderful learning environment for our child. The teachers genuinely care, and we\'ve seen tremendous growth in confidence and independence.',
       rating: 5,
       image: '/images/testimonials/parent-1.jpg'
     },
@@ -141,14 +141,14 @@ export default function Programs() {
     {
       name: 'Grace Wanjiku',
       childName: 'Liam Wanjiku',
-      content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend Dukes!',
+      content: 'The progress my son has made in just one term is amazing. The teachers are dedicated, and the facilities are top-notch. Highly recommend E-Springs!',
       rating: 5,
       image: '/images/testimonials/parent-3.jpg'
     },
     {
       name: 'Michael Kimani',
       childName: 'Sophia Kimani',
-      content: 'Dukes Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
+      content: 'E-Springs Kindergarten has been a fantastic experience for our daughter. The curriculum is well-rounded, and the staff is incredibly supportive. We\'ve seen her thrive in this environment.',
       rating: 5,
       image: '/images/testimonials/parent-4.jpg'
     }
@@ -229,7 +229,7 @@ export default function Programs() {
                 Learning Through Discovery
               </h3>
               <p className="text-white/90 max-w-2xl mx-auto">
-                At Dukes Kindergarten, children engage in exciting activities that encourage exploration,
+                At E-Springs Kindergarten, children engage in exciting activities that encourage exploration,
                 creativity, and problem-solving.
               </p>
             </div>
@@ -259,7 +259,7 @@ export default function Programs() {
         <div className="container mx-auto px-4">
           <SectionHeader 
             title="What Parents Say"
-            description="Hear from our happy families about their experience at Dukes Yatani"
+            description="Hear from our happy families about their experience at E-Springs Junior School"
           />
 
           <div className="max-w-4xl mx-auto">

@@ -46,7 +46,7 @@ export default function Hero() {
       <section
         id="hero"
         className="relative min-h-[100dvh] flex items-center pt-20 pb-48 md:pb-20 overflow-hidden"
-        aria-label="Hero section - Welcome to Dukes Yatani Kindergarten"
+        aria-label="Hero section - Welcome to E-Springs Junior School Kindergarten"
       >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
