@@ -37,20 +37,19 @@ export default function Footer() {
           {/* About - With Logo */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-12 h-12 flex-shrink-0">
-                <Image
-                  src="/images/logo.png"
-                  alt="E-Springs Kindergarten Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="E-Springs Kindergarten Logo"
+                width={48}
+                height={48}
+                className="h-10 w-auto"
+              />
               <div>
                 <h3 className="text-xl font-heading font-bold">E-Springs</h3>
-                <p className="text-md text-gray-300">Junior School</p>
+                <p className="text-sm text-gray-300">Junior School</p>
               </div>
             </div>
-            <p className="text-gray-300">Nurturing young minds since 2010</p>
+            <p className="text-gray-300">Guarding our Heritage</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
                 <a
@@ -121,7 +120,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-600 pt-8 text-sm text-gray-400">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; {new Date().getFullYear()} E-Springs Kindergarten. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} E-Springs Junior School. All rights reserved.</p>
             <div className="flex space-x-4">
               <Link
                 href="/terms"

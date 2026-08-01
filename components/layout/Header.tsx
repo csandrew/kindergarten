@@ -81,7 +81,7 @@ export default function Header() {
                 <span className={`block text-xs ${
                   isScrolled ? 'text-gray-600' : 'text-gray-300'
                 }`}>
-                  Kindergarten
+                  Junior School
                 </span>
               </div>
             </Link>
