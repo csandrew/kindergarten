@@ -84,7 +84,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/about/classroom.jpg"
+                src="/images/about.png"
                 alt="Children learning in a bright classroom"
                 fill
                 className="object-cover hover:scale-105 transition duration-500"
