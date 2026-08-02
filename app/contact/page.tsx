@@ -28,11 +28,11 @@ interface SubmitStatus {
 const CONTACT_INFO = {
   address: 'Olumbori Lane, off Moi Drive, Umoja 1 – Embakasi West',
   phone: '+254 720 979 743',
-  email: 'info@esprongsjunior.co.ke',
+  email: 'info@espringsschools.com',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
-    weekend: 'Closed',
-    daycare: 'Available every day'
+    weekend: '8:00 AM - 12:00 noon',
+    daycare: '- Available every day'
   }
 }
 
@@ -48,15 +48,11 @@ const MAP_EMBED_URL = process.env.NEXT_PUBLIC_MAP_EMBED_URL || ''
 const faqs = [
   {
     question: "What are the admission requirements?",
-    answer: "Applicants must provide a birth certificate, medical records, a recent photograph, and completed application forms. Age requirements vary by program: Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1 & 2 (6-8 years)."
+    answer: "Applicants must provide a birth certificate, medical report, and completed application forms. Age requirements vary by program."
   },
   {
     question: "When is the application deadline?",
     answer: "Applications are accepted year-round, but we recommend submitting your application at least two weeks before the desired start date to ensure availability."
-  },
-  {
-    question: "Is there a sibling discount?",
-    answer: "Yes, we offer a 10% discount for siblings enrolled simultaneously."
   },
   {
     question: "What is the tuition fee?",
@@ -71,12 +67,8 @@ const faqs = [
     answer: "We maintain small class sizes with a student-to-teacher ratio of 8:1, ensuring individual attention for every child."
   },
   {
-    question: "What documents are needed for admission?",
-    answer: "You will need: Child's birth certificate, immunization records, 2 passport-size photographs, completed application form, copy of parent/guardian ID, previous school records (if applicable), and a medical examination report."
-  },
-  {
     question: "What programs do you offer?",
-    answer: "We offer Daycare (1-3 years), Play Group (1-3 years), PP1 (4-5 years), PP2 (5-6 years), Grade 1, and Grade 2."
+    answer: "We offer Daycare, Play Group, PP1 & PP2, Grade 1 - 8."
   }
 ]
 
@@ -181,8 +173,8 @@ export default function ContactPage() {
       content: (
         <>
           <p className="text-gray-600">Monday - Friday: {CONTACT_INFO.hours.weekdays}</p>
-          <p className="text-gray-600">Saturday - Sunday: {CONTACT_INFO.hours.weekend}</p>
-          <p className="text-sm text-gray-500 mt-2">* Daycare {CONTACT_INFO.hours.daycare}</p>
+          <p className="text-gray-600">Saturday : {CONTACT_INFO.hours.weekend}</p>
+          <p className="text-sm text-gray-500 mt-2">* Childcare/Daycare {CONTACT_INFO.hours.daycare}</p>
         </>
       )
     }
@@ -239,24 +231,6 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Quick Links */}
-              {/*<div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
-                <h3 className="font-heading font-semibold text-lg text-primary mb-4">
-                  Quick Links
-                </h3>
-                <div className="space-y-2">
-                  <Link href="/admissions" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    → Admissions - Download Forms
-                  </Link>
-                  <Link href="/requirements" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    → Requirements by Level
-                  </Link>
-                  <Link href="/fees" className="text-gray-600 hover:text-secondary transition flex items-center gap-2">
-                    → Fee Structure
-                  </Link>
-                </div>
-              </div> */}
 
 
             </div>

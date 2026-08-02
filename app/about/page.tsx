@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about E-Springs Junior School Kindergarten - our mission, vision, values, and commitment to early childhood education.',
+  description: 'Learn about E-Springs Kindergarten & Junior School  - our mission, vision, values, and commitment to early childhood education.',
 }
 
 // Constants
@@ -40,15 +40,7 @@ export default function AboutPage() {
     },
   ]
 
-  const milestones = [
-    { year: '2010', event: 'E-Springs Junior School Kindergarten Founded' },
-    { year: '2012', event: 'Expanded to full-day programs' },
-    { year: '2015', event: 'Awarded Best Kindergarten in Yatani' },
-    { year: '2018', event: 'Launched STEM early learning program' },
-    { year: '2020', event: 'Introduced virtual learning options' },
-    { year: '2023', event: 'State-of-the-art facility expansion' },
-  ]
-
+  
   return (
     <main className="pt-24">
       {/* Hero */}
@@ -56,8 +48,8 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">About Us</h1>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-6"></div>
-          <p className="text-xl max-w-3xl mx-auto text-gray-200">
-            Inspiring a love for learning since {startYear}
+          <p className="text-xl max-w-3xl mx-auto text-gray-200 italic">
+            "Guarding Our Heritage through Quality Education"
           </p>
         </div>
       </section>
@@ -134,8 +126,8 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 md:p-8 shadow-lg">
             <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/about/principal.jpg"
-                alt="Director Mrs. Jane Mwangi"
+                src="/images/director.png"
+                alt="Director, Mary Pricilla"
                 fill
                 className="object-cover hover:scale-105 transition duration-500"
                 placeholder="blur"
@@ -153,39 +145,12 @@ export default function AboutPage() {
                 Our school is committed to providing a warm, inclusive, and stimulating environment where every child can thrive. Together with our dedicated team of educators, we ensure that each child receives the attention, care, and guidance they need to reach their full potential.
               </p>
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <p className="font-heading font-semibold text-primary">Mrs. Jane Mwangi</p>
+                <p className="font-heading font-semibold text-primary">Dr. Mary Pricilla</p>
                 <p className="text-sm text-gray-500">Director, E-Springs Junior School</p>
               </div>
             </div>
           </div>
 
-          {/* History Milestones */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-heading font-bold text-primary text-center mb-4">Our Journey</h3>
-            <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-8"></div>
-            <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-secondary/30 -translate-x-1/2"></div>
-              <div className="space-y-8 relative">
-                {milestones.map((item, idx) => (
-                  <div key={idx} className={`flex flex-col md:flex-row items-center ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className={`hidden md:block w-1/2 ${idx % 2 === 0 ? 'md:pr-12' : 'md:pl-12 order-2'}`}>
-                      <div className="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition">
-                        <div className="text-secondary font-bold text-xl">{item.year}</div>
-                        <p className="text-gray-700">{item.event}</p>
-                      </div>
-                    </div>
-                    <div className="hidden md:flex items-center justify-center w-8 h-8 bg-secondary rounded-full z-10 flex-shrink-0">
-                      <Award className="text-white w-4 h-4" />
-                    </div>
-                    <div className="md:hidden w-full bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition">
-                      <div className="text-secondary font-bold text-xl">{item.year}</div>
-                      <p className="text-gray-700">{item.event}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

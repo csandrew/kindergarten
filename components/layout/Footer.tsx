@@ -14,11 +14,11 @@ const SOCIAL_LINKS = [
 const CONTACT_INFO = {
   address: 'Olumbori Lane, off Moi Drive, Umoja 1 – Embakasi West',
   phone: '+254 720 979 743',
-  email: 'info@espringskindergarten.ac.ke',
+  email: 'info@espringsschools.com',
   hours: {
-    weekdays: '7:30 AM - 5:00 PM',
-    weekend: 'Closed',
-    daycare: 'Available every day'
+    weekdays: '8:00 AM - 5:00 PM',
+    weekend: '8:00 AM - 12:00 noon',
+    daycare: ' - Available every day'
   }
 }
 
@@ -50,7 +50,7 @@ export default function Footer() {
                 <p className="text-sm text-gray-300">Junior School</p>
               </div>
             </div>
-            <p className="text-gray-300">A Solid and Sure Foundation</p>
+            <p className="text-gray-300 italic">"A Solid and Sure Foundation."</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
                 <a
@@ -75,11 +75,11 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
-                    href={link.href}
-                    className="text-gray-300 hover:text-secondary transition focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-primary rounded px-2 py-1"
-                  >
-                    {link.name}
-                  </Link>
+  href={link.href}
+  className="text-gray-300 hover:text-secondary transition focus:outline-none focus:underline focus:underline-offset-4 focus:decoration-2 focus:decoration-secondary rounded px-2 py-1"
+>
+  {link.name}
+</Link>
                 </li>
               ))}
             </ul>
@@ -112,8 +112,8 @@ export default function Footer() {
             </div>
             <div className="space-y-2 text-gray-300">
               <p>Monday - Friday: {CONTACT_INFO.hours.weekdays}</p>
-              <p>Saturday - Sunday: {CONTACT_INFO.hours.weekend}</p>
-              <p className="text-sm text-gray-400 mt-2">* Childcare {CONTACT_INFO.hours.daycare}</p>
+              <p>Saturday : {CONTACT_INFO.hours.weekend}</p>
+              <p className="text-sm text-gray-400 mt-2">* Childcare/Daycare {CONTACT_INFO.hours.daycare}</p>
             </div>
           </div>
         </div>

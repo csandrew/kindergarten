@@ -54,7 +54,7 @@ export default function AdmissionsPage() {
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Admissions</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
-            Join the E-Springs family and give your child the best start in life
+            Give your child the best start in life.
           </p>
         </div>
       </section>

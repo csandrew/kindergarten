@@ -86,7 +86,7 @@ export default function ProgramsPage() {
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Our Programs</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
-            Nurturing young minds through play-based learning and meaningful experiences
+            Through play-based learning and meaningful experiences
           </p>
         </div>
       </section>
@@ -222,7 +222,7 @@ export default function ProgramsPage() {
             Ready to Begin Your Child's Journey?
           </h3>
           <p className="text-white/90 max-w-2xl mx-auto mb-6">
-            Give your child the best start in life. Join the E-Springs family today.
+            Give your child the best start in life. Join the E-Springs today.
           </p>
           <Link href="/admissions">
             <Button variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl">
