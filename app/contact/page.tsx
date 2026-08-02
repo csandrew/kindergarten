@@ -423,7 +423,7 @@ export default function ContactPage() {
                       Send us a message
                     </Button>
                   </Link>
-                  <a href="tel:+254700000000" className="inline-block">
+                  <a href="tel:+254720979743" className="inline-block">
                     <Button variant="outline" size="sm">
                       Call us
                     </Button>
