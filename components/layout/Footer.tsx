@@ -13,7 +13,7 @@ const SOCIAL_LINKS = [
 
 const CONTACT_INFO = {
   address: 'Olumbori Lane, off Moi Drive, Umoja 1 – Embakasi West',
-  phone: '+254 700 000 000',
+  phone: '+254 720 979 743',
   email: 'info@espringskindergarten.ac.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',

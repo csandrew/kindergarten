@@ -5,9 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import {
-  Users, Heart,
-  CheckCircle,
-  ArrowRight, Clock, Award, Star
+  Users, Heart, ArrowRight, Clock, Award, Star
 } from 'lucide-react'
 
 export default function ProgramsPage() {
@@ -97,9 +95,7 @@ export default function ProgramsPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg text-gray-700 leading-relaxed">
-            E-Springs is a faith-based institution committed to ensuring holistic growth and development 
-            of each and every child brought under our care. We provide a safe environment that enables 
-            children to have fun, play, learn, grow, and thrive on a solid and sure foundation.
+            We provide a safe environment that enables children to have fun, play, learn, grow, and thrive on a solid and sure foundation.
           </p>
         </div>
       </section>

@@ -26,8 +26,8 @@ interface SubmitStatus {
 }
 
 const CONTACT_INFO = {
-  address: 'Umoja One - Peacock, Nairobi',
-  phone: '+254 700 000 000',
+  address: 'Olumbori Lane, off Moi Drive, Umoja 1 – Embakasi West',
+  phone: '+254 720 979 743',
   email: 'info@esprongsjunior.co.ke',
   hours: {
     weekdays: '7:30 AM - 5:00 PM',
