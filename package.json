@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "mkdir -p .next/standalone/public && cp -r public/* .next/standalone/public/ 2>/dev/null || true && mkdir -p .next/standalone/.next/static && cp -r .next/static/* .next/standalone/.next/static/ 2>/dev/null || true"
+    "postbuild": "node scripts/copy-static.js"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
