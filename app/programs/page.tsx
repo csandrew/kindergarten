@@ -7,78 +7,78 @@ import { Button } from '@/components/ui/Button'
 import {
   Users, Heart,
   CheckCircle,
-  ArrowRight, Clock, Award, Star, BookOpen
+  ArrowRight, Clock, Award, Star
 } from 'lucide-react'
 
 export default function ProgramsPage() {
   const [activeTab, setActiveTab] = useState('all')
 
   const programs = [
+    // ===== CATEGORY 1: DAYCARE / CHILDCARE =====
     {
       id: 'daycare',
       age: '1 - 3 Years',
       title: 'Daycare',
+      category: 'daycare',
       description: 'A gentle introduction to learning through sensory play, music, movement, and social interaction. Our caring staff provides a warm, nurturing environment where infants and toddlers feel safe and loved.',
-      image: '/images/programs/playgroup.jpg',
+      image: '/images/daycare.jpg',
       color: 'from-green-500 to-green-600',
       features: ['Sensory play', 'Music & movement', 'Social interaction', 'Nurturing care'],
       schedule: '7:30 AM - 5:00 PM',
     },
+    // ===== CATEGORY 2: KINDERGARTEN / PRE-SCHOOL =====
     {
-      id: 'playgroup',
-      age: '3 - 4 Years',
-      title: 'Playgroup',
-      description: 'Developing communication, independence, creativity, and foundational skills through structured play and guided activities that spark curiosity and joy in learning.',
-      image: '/images/programs/nursery.jpg',
-      color: 'from-blue-500 to-blue-600',
-      features: ['Language development', 'Creative expression', 'Social skills', 'Independence building'],
-      schedule: '7:30 AM - 5:00 PM',
-    },
-    {
-      id: 'pp1',
-      age: '4 - 5 Years',
-      title: 'PP1 (Pre-Primary 1)',
-      description: 'Building confidence in literacy, numeracy, and problem-solving through engaging activities that prepare children for more structured learning while maintaining the joy of discovery.',
-      image: '/images/programs/pre-k.jpg',
+      id: 'kindergarten',
+      age: '3 - 6 Years',
+      title: 'Kindergarten / Pre-School',
+      category: 'kindergarten',
+      description: 'Our kindergarten program nurtures young minds through play-based learning. We focus on developing communication, independence, creativity, and foundational skills that prepare children for primary education.',
+      image: '/images/kindergarten.jpg',
       color: 'from-purple-500 to-purple-600',
-      features: ['Early literacy', 'Numeracy skills', 'Problem-solving', 'Creative thinking'],
+      features: ['Play-based learning', 'Language development', 'Creative expression', 'Social skills', 'Early literacy', 'Numeracy skills'],
       schedule: '7:30 AM - 5:00 PM',
+      includes: ['Playgroup (3-4 yrs)', 'PP1 (4-5 yrs)', 'PP2 (5-6 yrs)'],
     },
+    // ===== CATEGORY 3: PRIMARY SCHOOL (GRADE 1-6) =====
     {
-      id: 'pp2',
-      age: '5 - 6 Years',
-      title: 'PP2 (Pre-Primary 2)',
-      description: 'Preparing children for primary school through structured learning, leadership opportunities, and advanced activities that build confidence, independence, and academic readiness.',
-      image: '/images/programs/kindergarten.jpg',
+      id: 'primary',
+      age: '6 - 12 Years',
+      title: 'Primary School',
+      category: 'primary',
+      description: 'Our primary school program (Grade 1-6) builds strong academic foundations through structured learning, critical thinking, and problem-solving. Students develop independence, research skills, and collaborative abilities.',
+      image: '/images/primary.png',
+      color: 'from-blue-500 to-blue-600',
+      features: ['Critical thinking', 'Problem-solving', 'Reading & writing', 'Mathematics', 'Research skills', 'Independent learning'],
+      schedule: '7:30 AM - 5:00 PM',
+      includes: ['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5', 'Grade 6'],
+    },
+    // ===== CATEGORY 4: JUNIOR SECONDARY (GRADE 7-8) =====
+    {
+      id: 'junior-secondary',
+      age: '12 - 14 Years',
+      title: 'Junior Secondary',
+      category: 'junior-secondary',
+      description: 'Our junior secondary program (Grade 7-8) prepares students for senior secondary and beyond. With a focus on subject specialization, deeper learning, and career exploration, students develop confidence and strong academic skills.',
+      image: '/images/secondary.png',
       color: 'from-orange-500 to-orange-600',
-      features: ['Primary school prep', 'Leadership skills', 'Advanced literacy', 'Critical thinking'],
+      features: ['Subject specialization', 'Deeper learning', 'Career exploration', 'Academic excellence', 'Life skills', 'Leadership'],
       schedule: '7:30 AM - 5:00 PM',
+      includes: ['Grade 7', 'Grade 8'],
     },
-    {
-      id: 'grade1',
-      age: '6 - 7 Years',
-      title: 'Grade 1',
-      description: 'Building on foundational skills with more structured learning, critical thinking, and problem-solving. Our program prepares children for academic success while nurturing their natural curiosity.',
-      image: '/images/programs/grade1.jpg',
-      color: 'from-red-500 to-red-600',
-      features: ['Critical thinking', 'Problem-solving', 'Reading & writing', 'Mathematics'],
-      schedule: '7:30 AM - 5:00 PM',
-    },
-    {
-      id: 'grade2',
-      age: '7 - 8 Years',
-      title: 'Grade 2',
-      description: 'Advanced learning with a focus on independent thinking, research skills, and collaborative learning. Students develop strong academic foundations and leadership qualities.',
-      image: '/images/programs/grade2.jpg',
-      color: 'from-indigo-500 to-indigo-600',
-      features: ['Independent thinking', 'Research skills', 'Collaboration', 'Leadership'],
-      schedule: '7:30 AM - 5:00 PM',
-    },
+  ]
+
+  // Categories with labels
+  const categories = [
+    { id: 'all', label: 'All Programs' },
+    { id: 'daycare', label: 'Daycare / Childcare' },
+    { id: 'kindergarten', label: 'Kindergarten / Pre-School' },
+    { id: 'primary', label: 'Primary School (Grade 1-6)' },
+    { id: 'junior-secondary', label: 'Junior Secondary (Grade 7-8)' },
   ]
 
   const filteredPrograms = activeTab === 'all'
     ? programs
-    : programs.filter(p => p.id === activeTab)
+    : programs.filter(p => p.category === activeTab)
 
   return (
     <main className="pt-24">
@@ -97,38 +97,31 @@ export default function ProgramsPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg text-gray-700 leading-relaxed">
-            We provide a safe environment that enables 
+            E-Springs is a faith-based institution committed to ensuring holistic growth and development 
+            of each and every child brought under our care. We provide a safe environment that enables 
             children to have fun, play, learn, grow, and thrive on a solid and sure foundation.
           </p>
         </div>
       </section>
 
+    
+
       {/* Programs Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* Tab Navigation */}
+          {/* Category Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
-            <button
-              onClick={() => setActiveTab('all')}
-              className={`px-4 py-2 rounded-full transition ${
-                activeTab === 'all'
-                  ? 'bg-primary text-white'
-                  : 'bg-white text-primary hover:bg-primary/10'
-              }`}
-            >
-              All Programs
-            </button>
-            {programs.map(p => (
+            {categories.map((cat) => (
               <button
-                key={p.id}
-                onClick={() => setActiveTab(p.id)}
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
                 className={`px-4 py-2 rounded-full transition ${
-                  activeTab === p.id
+                  activeTab === cat.id
                     ? 'bg-primary text-white'
                     : 'bg-white text-primary hover:bg-primary/10'
                 }`}
               >
-                {p.title}
+                {cat.label}
               </button>
             ))}
           </div>
@@ -154,6 +147,20 @@ export default function ProgramsPage() {
                 <div className="p-6">
                   <h3 className="text-2xl font-heading font-bold text-primary mb-2">{program.title}</h3>
                   <p className="text-gray-600 mb-4">{program.description}</p>
+
+                  {/* Show included grades if they exist */}
+                  {program.includes && (
+                    <div className="mb-4">
+                      <p className="text-sm font-semibold text-primary mb-2">Includes:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {program.includes.map((grade, gIdx) => (
+                          <span key={gIdx} className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">
+                            {grade}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {program.features.map((feature, fIdx) => (
@@ -209,26 +216,6 @@ export default function ProgramsPage() {
               </div>
             ))}
           </div>
-
-          {/* Additional Services */}
-          {/*<div className="mt-12 bg-gradient-to-r from-primary/5 to-secondary/10 rounded-2xl p-8">
-            <h3 className="text-xl font-heading font-bold text-primary text-center mb-6">
-              Additional Services
-            </h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                'Mental well-being coaching',
-                'Family life counseling',
-                'Nurturing talents',
-                'Mentorship'
-              ].map((service, idx) => (
-                <div key={idx} className="text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition">
-                  <CheckCircle className="text-secondary w-6 h-6 mx-auto mb-2" />
-                  <span className="text-gray-700 font-medium">{service}</span>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
       </section>
 

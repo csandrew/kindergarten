@@ -41,8 +41,8 @@ export default function Home() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg text-gray-700 leading-relaxed">
-            E-Springs is a faith-based institution committed to ensuring holistic growth and development 
-            of each and every child brought under our care. We provide a safe environment that enables 
+            E-Springs is a faith-based institution committed to ensuring holistic growth and development
+            of each and every child brought under our care. We provide a safe environment that enables
             children to have fun, play, learn, grow, and thrive on a solid and sure foundation.
           </p>
         </div>
@@ -63,8 +63,8 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {programPreviews.map((program, idx) => (
-              <Link 
-                key={idx} 
+              <Link
+                key={idx}
                 href={program.href}
                 className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition group border border-gray-100 hover:border-secondary/30"
               >
@@ -101,13 +101,18 @@ export default function Home() {
               </h2>
               <div className="w-20 h-1 bg-secondary rounded-full mb-6"></div>
               <p className="text-gray-200 leading-relaxed mb-4">
-                E-Springs is a faith-based institution committed to ensuring holistic growth and development 
-                of each and every child brought under our care.
+
+                At E-Springs, we are passionate about raising children who are confident,
+                compassionate, and well-rounded.
+
               </p>
               <p className="text-gray-200 leading-relaxed mb-6">
-                We provide a safe environment that enables children to have fun, play, learn, grow, 
-                and thrive on a solid and sure foundation for each child to emerge into his or her 
-                God-ordained destiny.
+
+                As a faith-based school,
+                we provide a safe and nurturing environment where every child is encouraged to learn, grow, play, and flourish.
+                Through quality education and Christian values,
+                we lay a strong foundation that prepares each child to fulfill their God-given potential and make a positive difference in the world.
+
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/about">
@@ -124,7 +129,7 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/about/classroom.jpg"
+                src="/images/primary.png"
                 alt="Children learning in a bright classroom"
                 fill
                 className="object-cover hover:scale-105 transition duration-500"
