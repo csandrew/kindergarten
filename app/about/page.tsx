@@ -23,9 +23,21 @@ export default function AboutPage() {
   const childrenTrained = yearsServed * CONFIG.avgChildrenPerYear + 25
 
   const values = [
-    { icon: Shield, title: 'Safety First', desc: 'Creating a secure environment where children feel safe to explore' },
-    { icon: Users, title: 'Respectful Relationships', desc: 'Building positive connections between children, teachers, and parents' },
-    { icon: Heart, title: 'Compassionate Care', desc: 'Providing nurturing support for each child\'s unique journey' },
+    {
+      icon: Shield,
+      title: 'Diligence',
+      desc: 'Encouraging hard work, perseverance, and a commitment to excellence in all endeavors.'
+    },
+    {
+      icon: Users,
+      title: 'Integrity',
+      desc: 'Upholding honesty, transparency, and strong moral principles in all interactions.'
+    },
+    {
+      icon: Heart,
+      title: 'Teamwork',
+      desc: 'Fostering collaboration, mutual respect, and a sense of community among all stakeholders.'
+    },
   ]
 
   const milestones = [
@@ -50,7 +62,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+
 
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
@@ -89,14 +101,14 @@ export default function AboutPage() {
               <Eye className="w-12 h-12 mx-auto mb-3 text-primary" />
               <h3 className="text-2xl font-heading font-bold text-primary mb-3 text-center">Our Vision</h3>
               <p className="text-gray-700 leading-relaxed text-center">
-                To be a leading center of excellence in early childhood education, nurturing confident, creative, and responsible learners.
+                To be an all-inclusive, innovative learning environment; holistic education balancing academics with personal growth
               </p>
             </div>
             <div className="bg-gradient-to-br from-secondary/10 to-primary/5 p-8 rounded-2xl hover:shadow-lg transition">
               <Target className="w-12 h-12 mx-auto mb-3 text-primary" />
               <h3 className="text-2xl font-heading font-bold text-primary mb-3 text-center">Our Mission</h3>
               <p className="text-gray-700 leading-relaxed text-center">
-                To provide a safe, caring, and engaging learning environment that inspires children to explore, discover, and achieve their full potential.
+                To foster a culture of excellence, integrity, and teamwork; creating a safe, inclusive environment that celebrates diversity, creativity, and critical thinking
               </p>
             </div>
           </div>
@@ -123,7 +135,7 @@ export default function AboutPage() {
             <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/about/principal.jpg"
-                alt="Principal Mrs. Jane Mwangi"
+                alt="Director Mrs. Jane Mwangi"
                 fill
                 className="object-cover hover:scale-105 transition duration-500"
                 placeholder="blur"
@@ -132,7 +144,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Principal</h3>
+              <h3 className="text-2xl font-heading font-bold text-primary mb-4">Message from the Director</h3>
               <div className="w-16 h-1 bg-secondary rounded-full mb-4"></div>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Welcome to E-Springs Junior School! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones.
@@ -142,7 +154,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <p className="font-heading font-semibold text-primary">Mrs. Jane Mwangi</p>
-                <p className="text-sm text-gray-500">Principal, E-Springs Junior School</p>
+                <p className="text-sm text-gray-500">Director, E-Springs Junior School</p>
               </div>
             </div>
           </div>

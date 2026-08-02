@@ -67,9 +67,9 @@ export default function Header() {
               <Image
                 src="/images/logo.png"
                 alt="E-Springs Kindergarten Logo"
-                width={48}
-                height={48}
-                className="h-10 w-auto"
+                width={64}
+                height={64}
+                className="h-14 w-auto"
                 priority
               />
               <div className="hidden sm:block">

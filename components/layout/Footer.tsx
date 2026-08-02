@@ -12,7 +12,7 @@ const SOCIAL_LINKS = [
 ]
 
 const CONTACT_INFO = {
-  address: 'Umoja One - Peacock, Nairobi',
+  address: 'Olumbori Lane, off Moi Drive, Umoja 1 – Embakasi West',
   phone: '+254 700 000 000',
   email: 'info@espringskindergarten.ac.ke',
   hours: {
@@ -40,16 +40,17 @@ export default function Footer() {
               <Image
                 src="/images/logo.png"
                 alt="E-Springs Kindergarten Logo"
-                width={48}
-                height={48}
-                className="h-10 w-auto"
+                width={64}
+                height={64}
+                className="h-14 w-auto"
+                priority
               />
               <div>
                 <h3 className="text-xl font-heading font-bold">E-Springs</h3>
                 <p className="text-sm text-gray-300">Junior School</p>
               </div>
             </div>
-            <p className="text-gray-300">Guarding our Heritage</p>
+            <p className="text-gray-300">A Solid and Sure Foundation</p>
             <div className="flex space-x-4 mt-4">
               {SOCIAL_LINKS.map((social, idx) => (
                 <a
