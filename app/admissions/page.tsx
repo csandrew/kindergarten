@@ -4,60 +4,43 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { 
   FileText, Calendar, Users, CheckCircle, 
-  Download, ArrowRight, BookOpen, Heart, ListChecks
+  Download, ArrowRight, ClipboardList, PenTool, Handshake, Sparkles
 } from 'lucide-react'
 
 // Add configuration at the top
 const ADMISSIONS_CONFIG = {
-  intakePeriod: 'Term 1 2027',
-  deadline: '15 January 2027',
-  startingFees: 'KSh 12,000',
-  // Add document URLs as constants
+  intakePeriod: '2026/2027',
   documents: {
-    feeStructure: '/documents/fee-structure.pdf',
-    medicalForm: '/documents/medical-form.pdf',
-    applicationForm: '/documents/application-form.pdf',
-    requirements: '/documents/admission-requirements.pdf'
+    applicationForm: '/documents/application-form.pdf'
   }
 }
 
 export default function AdmissionsPage() {
   const steps = [
-    { step: 1, icon: FileText, title: 'Review Requirements', desc: 'Check all admission requirements and download the checklist' },
-    { step: 2, icon: Download, title: 'Download Forms', desc: 'Download and complete the required forms' },
-    { step: 3, icon: Users, title: 'Visit Us', desc: 'Visit and submit completed forms and required documents' },
-    { step: 4, icon: CheckCircle, title: 'Enrollment Confirmation', desc: 'Receive confirmation and secure your child\'s spot' }
-  ]
-
-  const downloadableDocs = [
     { 
-      name: 'Fee Structure', 
-      description: 'Complete fee breakdown for all levels',
-      icon: FileText,
-      url: ADMISSIONS_CONFIG.documents.feeStructure,
-      color: 'from-blue-500 to-blue-600'
+      step: 1, 
+      icon: ClipboardList, 
+      title: 'Inquiry & Information', 
+      desc: 'Contact us to learn about our programs, fees, and availability. We\'ll provide you with all the information you need to make an informed decision.' 
     },
     { 
-      name: 'Medical Form', 
-      description: 'Required medical information form',
-      icon: Heart,
-      url: ADMISSIONS_CONFIG.documents.medicalForm,
-      color: 'from-red-500 to-red-600'
+      step: 2, 
+      icon: PenTool, 
+      title: 'Application Submission', 
+      desc: 'Complete and submit the application form along with the required documents. Our admissions team will review your application.' 
     },
     { 
-      name: 'Application Form', 
-      description: 'School enrollment application form',
-      icon: BookOpen,
-      url: ADMISSIONS_CONFIG.documents.applicationForm,
-      color: 'from-purple-500 to-purple-600'
+      step: 3, 
+      icon: Users, 
+      title: 'Assessment & Interview', 
+      desc: 'Schedule a school visit and assessment for your child. This helps us understand your child\'s needs and ensures a good fit.' 
     },
     { 
-      name: 'Admission Requirements', 
-      description: 'Complete checklist of requirements',
-      icon: ListChecks,
-      url: ADMISSIONS_CONFIG.documents.requirements,
-      color: 'from-green-500 to-green-600'
-    },
+      step: 4, 
+      icon: Handshake, 
+      title: 'Enrollment & Welcome', 
+      desc: 'Upon acceptance, complete the enrollment process and receive a warm welcome to the E-Springs Schools community.' 
+    }
   ]
 
   return (
@@ -68,7 +51,7 @@ export default function AdmissionsPage() {
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Admissions</h1>
           <div className="w-20 h-1 bg-white/50 mx-auto rounded-full mb-6"></div>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
-            Give your child the best start in life.
+            Begin your child's journey with us today
           </p>
         </div>
       </section>
@@ -77,18 +60,19 @@ export default function AdmissionsPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg text-gray-700 leading-relaxed">
-            Choosing the right school for a child is one of the most important decisions any parent or guardian will make. 
-            At E-Springs, we welcome children from diverse backgrounds and are committed to helping every learner thrive.
+            At E-Springs Schools, we believe every child deserves a strong educational foundation. 
+            Our admissions process is designed to be simple, transparent, and welcoming for families 
+            joining our community.
           </p>
         </div>
       </section>
 
-      {/* Intake / Deadline Banner - REINSTATED */}
+      {/* Intake Banner */}
       <section className="py-8 bg-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 text-center">
           <p className="text-primary font-semibold flex items-center justify-center gap-2 flex-wrap">
             <Calendar size={20} aria-hidden="true" />
-            <span>{ADMISSIONS_CONFIG.intakePeriod} intake now open — closes {ADMISSIONS_CONFIG.deadline}</span>
+            <span>{ADMISSIONS_CONFIG.intakePeriod} intake now open — Limited places available</span>
           </p>
         </div>
       </section>
@@ -97,105 +81,82 @@ export default function AdmissionsPage() {
       <section className="py-16 bg-gray-50" id="admissions-process">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-heading font-bold text-primary text-center mb-4">
-            Admission Process
+            How to Enroll Your Child
           </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-8">
+            Follow these simple steps to secure your child's place at E-Springs Schools
+          </p>
           <div className="w-20 h-1 bg-secondary mx-auto rounded-full mb-12"></div>
           
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {steps.map((item, idx) => (
-              <div key={idx} className="text-center relative">
+              <div key={idx} className="relative">
+                {/* Connector line */}
                 {idx < 3 && (
-                  <div className="hidden md:block absolute top-1/4 left-full w-full h-0.5 bg-secondary/30 -translate-x-1/2" aria-hidden="true" />
+                  <div className="hidden lg:block absolute top-20 left-full w-full h-0.5 bg-secondary/30 -translate-x-1/2" aria-hidden="true" />
                 )}
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
-                  <item.icon size={32} aria-hidden="true" />
+                
+                <div className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full border border-gray-100">
+                  {/* Step Number */}
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="relative">
+                      <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center relative z-10">
+                        <item.icon size={28} aria-hidden="true" />
+                      </div>
+                      <div className="absolute -top-2 -right-2 bg-primary text-white w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold">
+                        {item.step}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h3 className="font-heading font-semibold text-lg text-primary mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
-                <div className="text-2xl font-bold text-primary mb-2">Step {item.step}</div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Downloadable Documents */}
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-2xl font-heading font-bold text-primary text-center mb-8">
-              Download Admission Documents
-            </h3>
-            <p className="text-gray-600 text-center mb-2 max-w-2xl mx-auto">
-              Download all the documents you need to complete the admission process.
-              Please fill them out and submit along with the required documents.
-            </p>
-            
-            {/* Fee teaser - REINSTATED */}
-            <p className="text-gray-500 text-center text-sm mb-10">
-              Fees start from {ADMISSIONS_CONFIG.startingFees}/term — see full breakdown below
-            </p>
-            
-            <div className="grid sm:grid-cols-2 gap-6">
-              {downloadableDocs.map((doc, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
-                >
-                  <div className={`bg-gradient-to-r ${doc.color} w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition`}>
-                    <doc.icon className="text-white w-7 h-7" />
-                  </div>
-                  <h4 className="text-xl font-heading font-bold text-primary mb-2">
-                    {doc.name}
-                  </h4>
-                  <p className="text-gray-600 text-sm mb-4">
-                    {doc.description}
-                  </p>
-                  
-                  {/* FIXED: Using anchor tag instead of button */}
-                  <a
-                    href={doc.url}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-primary hover:bg-primary/80 text-white px-4 py-2.5 rounded-xl font-semibold transition flex items-center justify-center gap-2 group"
-                  >
-                    <Download size={18} />
-                    Download {doc.name}
-                  </a>
-                </div>
-              ))}
-            </div>
-
-            {/* Contact Admissions Team - UNCOMMENTED */}
-            <div className="mt-10 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-2xl text-center">
-              <p className="text-gray-700 mb-4 font-medium">
-                Have more questions about admissions?
-              </p>
-              <Link href="/contact">
-                <Button variant="primary">
-                  Contact Admissions Team <ArrowRight size={18} className="ml-2" />
-                </Button>
-              </Link>
-            </div>
-          </div>
+          
 
           {/* Call to Action */}
-          <div className="mt-12 bg-secondary rounded-2xl p-8 text-center text-white">
-            <h3 className="text-2xl font-heading font-bold mb-3">
-              Ready to Begin Your Child's Journey?
-            </h3>
-            <p className="text-white/90 max-w-2xl mx-auto mb-6">
-              Download the application form, complete it, and submit it with the required documents to secure your child's spot.
-            </p>
+          <div className="relative bg-gradient-to-r from-secondary to-secondary-dark rounded-2xl p-8 md:p-12 text-center text-white overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl" />
+            </div>
             
-            {/* FIXED: Using anchor tag */}
-            <a
-              href={ADMISSIONS_CONFIG.documents.applicationForm}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-3 mx-auto shadow-lg hover:shadow-xl w-fit"
-            >
-              <Download size={20} />
-              Download Application Form
-            </a>
+            <div className="relative z-10">
+              <Sparkles className="w-12 h-12 mx-auto mb-4 text-white/80" />
+              <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">
+                Ready to Begin Your Child's Journey?
+              </h3>
+              <p className="text-white/90 max-w-2xl mx-auto mb-6">
+                Take the first step today. Contact our admissions team to schedule a tour 
+                and learn more about how we can support your child's educational journey.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact">
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    Contact Admissions <ArrowRight size={18} className="ml-2" />
+                  </Button>
+                </Link>
+                <a 
+                  href="tel:+254720979743"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-xl font-semibold border-2 border-white text-white hover:bg-white/20 transition-all duration-300"
+                >
+                  Call Us Now
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
