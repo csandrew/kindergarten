@@ -1,4 +1,3 @@
-// src/app/about/page.tsx
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
@@ -35,8 +34,6 @@ export default function AboutPage() {
     },
   ]
 
- 
-
   return (
     <main className="pt-24">
       {/* Hero - Enhanced with glassmorphism */}
@@ -61,8 +58,6 @@ export default function AboutPage() {
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          
-
           {/* About Content with Glass Effect */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
@@ -167,85 +162,178 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Director's Message - Enhanced */}
-          <div className="grid md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
-            <div className="relative h-[400px] md:h-96 rounded-2xl overflow-hidden shadow-xl group">
-              <Image
-                src="/images/director.png"
-                alt="Dr. Mary Pricilla - Director of E-Springs Junior School"
-                fill
-                className="object-cover group-hover:scale-105 transition duration-700"
-                placeholder="blur"
-                blurDataURL={IMAGE_BLUR_DATA_URL}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          {/* School History Timeline */}
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-1 bg-secondary rounded-full" />
+              <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Our Journey</span>
             </div>
             
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-1 bg-secondary rounded-full" />
-                <span className="text-sm font-semibold text-secondary uppercase tracking-wider">Message from the Director</span>
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-2">
+              Our History
+            </h3>
+            <p className="text-gray-600 mb-8">A decade of nurturing young minds and building futures</p>
+            
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-secondary/50 via-secondary to-secondary/50 transform -translate-x-1/2" />
+              
+              {/* Timeline Items */}
+              <div className="space-y-8">
+                {/* Item 1 - 2010 */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary">
+                      <h4 className="text-lg font-heading font-bold text-primary">Foundation Year</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        E-Springs Junior School was established with a vision to provide quality early childhood education in a nurturing environment.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        1
+                      </div>
+                      <span className="text-sm font-bold text-secondary">2010</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Item 2 - 2013 */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary/70">
+                      <h4 className="text-lg font-heading font-bold text-primary">Expansion to Primary</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        Expanded our programs to include Primary School (Grade 1-6), serving a wider age range of students.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary/70 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        2
+                      </div>
+                      <span className="text-sm font-bold text-secondary">2013</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Item 3 - 2016 */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary/50">
+                      <h4 className="text-lg font-heading font-bold text-primary">New Campus</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        Moved to our current location on Olumbori Lane, Umoja 1, providing a larger, more modern learning environment.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary/50 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        3
+                      </div>
+                      <span className="text-sm font-bold text-secondary">2016</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Item 4 - 2019 */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary/30">
+                      <h4 className="text-lg font-heading font-bold text-primary">Digital Learning</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        Integrated technology and digital learning tools into our curriculum to prepare students for the future.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary/30 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        4
+                      </div>
+                      <span className="text-sm font-bold text-secondary">2019</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Item 5 - 2022 */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-white p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary/20">
+                      <h4 className="text-lg font-heading font-bold text-primary">Junior Secondary</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        Launched Junior Secondary (Grade 7-8), offering comprehensive education through teenage years.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary/20 text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        5
+                      </div>
+                      <span className="text-sm font-bold text-secondary">2022</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Item 6 - Today */}
+                <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                  <div className="md:w-1/2 md:text-right md:pr-8 order-2 md:order-1">
+                    <div className="bg-primary/5 p-5 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border-l-4 border-secondary">
+                      <h4 className="text-lg font-heading font-bold text-primary">Today & Beyond</h4>
+                      <p className="text-gray-600 text-sm mt-1">
+                        Celebrating 15+ years of excellence. Continuing to nurture, inspire, and prepare young minds for a bright future.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="md:w-1/2 md:pl-8 order-1 md:order-2 flex md:block">
+                    <div className="flex items-center gap-3 md:justify-start">
+                      <div className="w-8 h-8 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-sm shadow-lg z-10 flex-shrink-0">
+                        ✦
+                      </div>
+                      <span className="text-sm font-bold text-primary">Present</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+
+          {/* CTA - Fixed Button Variant */}
+          <div className="container mx-auto px-4 pb-16 mt-12">
+            <div className="relative bg-gradient-to-r from-secondary to-secondary-dark rounded-2xl p-8 md:p-12 text-center text-white overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl" />
               </div>
               
-              <h3 className="text-2xl font-heading font-bold text-primary mb-4">
-                A Word from Our Director
-              </h3>
-              
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Welcome to E-Springs Junior School! I am thrilled to be part of this wonderful community dedicated to nurturing the minds and hearts of our little ones.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Our school is committed to providing a warm, inclusive, and stimulating environment where every child can thrive. Together with our dedicated team of educators, we ensure that each child receives the attention, care, and guidance they need to reach their full potential.
-              </p>
-              
-              <div className="pt-4 border-t border-gray-200">
-                <p className="font-heading font-bold text-primary text-lg">Dr. Mary Pricilla</p>
-                <p className="text-sm text-gray-500">Director, E-Springs School</p>
-                <div className="flex items-center gap-2 mt-2">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="text-sm text-gray-500">15+ Years of Excellence</span>
-                </div>
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">
+                  Ready to Begin Your Child's Journey?
+                </h3>
+                <p className="text-white/90 max-w-2xl mx-auto mb-6">
+                  Join the E-Springs family today and give your child the foundation they need for a bright future.
+                </p>
+                <Link href="/admissions">
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    Enroll Now <ArrowRight size={18} className="ml-2" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA - Fixed Button Variant */}
-      <div className="container mx-auto px-4 pb-16">
-        <div className="relative bg-gradient-to-r from-secondary to-secondary-dark rounded-2xl p-8 md:p-12 text-center text-white overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary rounded-full blur-3xl" />
-          </div>
-          
-          <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">
-              Ready to Begin Your Child's Journey?
-            </h3>
-            <p className="text-white/90 max-w-2xl mx-auto mb-6">
-              Join the E-Springs family today and give your child the foundation they need for a bright future.
-            </p>
-            <Link href="/admissions">
-              <Button 
-                variant="primary" 
-                size="lg" 
-                className="bg-white text-primary hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Enroll Now <ArrowRight size={18} className="ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
     </main>
   )
 }

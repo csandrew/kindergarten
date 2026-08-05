@@ -72,7 +72,7 @@ export default function AdmissionsPage() {
         <div className="container mx-auto px-4 text-center">
           <p className="text-primary font-semibold flex items-center justify-center gap-2 flex-wrap">
             <Calendar size={20} aria-hidden="true" />
-            <span>{ADMISSIONS_CONFIG.intakePeriod} intake now open — Limited places available</span>
+            <span>{ADMISSIONS_CONFIG.intakePeriod} Intake Now Open</span>
           </p>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function AdmissionsPage() {
             </div>
             
             <div className="relative z-10">
-              <Sparkles className="w-12 h-12 mx-auto mb-4 text-white/80" />
+              
               <h3 className="text-2xl md:text-3xl font-heading font-bold mb-3">
                 Ready to Begin Your Child's Journey?
               </h3>

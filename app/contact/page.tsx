@@ -1,4 +1,3 @@
-// src/app/contact/page.tsx
 'use client'
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
@@ -36,14 +35,13 @@ const CONTACT_INFO = {
   }
 }
 
-// ✅ Fixed social media handles
 const SOCIAL_LINKS = [
   { icon: FaFacebook, href: 'https://facebook.com/espringsjunior', label: 'Facebook', color: 'text-[#1877f2]' },
   { icon: FaInstagram, href: 'https://instagram.com/espringsjunior', label: 'Instagram', color: 'text-[#e4405f]' },
   { icon: FaLinkedin, href: 'https://linkedin.com/company/espringsjunior', label: 'LinkedIn', color: 'text-[#0a66c2]' }
 ]
 
-const MAP_EMBED_URL = process.env.NEXT_PUBLIC_MAP_EMBED_URL || ''
+const MAP_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d38069.83354924852!2d36.80864318522956!3d-1.3086417239531523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x182f1595dd14db63%3A0x5f5c9dd16eba0326!2sESPRINGS%20SCHOOL%2C%20Nairobi!3m2!1d-1.2770664999999999!2d36.8894739!5e0!3m2!1sen!2ske!4v1785935164934!5m2!1sen!2ske'
 
 const faqs = [
   {
@@ -126,7 +124,6 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: '' })
 
     try {
-      // ✅ Actually send the form data
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -198,7 +195,7 @@ export default function ContactPage() {
 
   return (
     <main className="pt-24">
-      {/* Hero - Enhanced with gradient */}
+      {/* Hero */}
       <section className="relative bg-primary text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
@@ -253,7 +250,7 @@ export default function ContactPage() {
                   </div>
                 ))}
 
-                {/* Follow Us Section */}
+                {/* Follow Us */}
                 <div className="pt-4 text-center border-t border-gray-100">
                   <h3 className="font-heading font-semibold text-lg text-primary mb-4">
                     Follow Us On:
@@ -275,7 +272,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Quick Response Time Badge */}
               <div className="mt-4 p-4 bg-green-50 rounded-xl border border-green-200 flex items-center gap-3">
                 <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
                 <div>
@@ -295,7 +291,6 @@ export default function ContactPage() {
                   Fill out the form below and we'll get back to you as soon as possible.
                 </p>
 
-                {/* Status Messages - Enhanced */}
                 {submitStatus.type === 'success' && (
                   <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-lg mb-4 flex items-start gap-3 animate-fade-in">
                     <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -423,7 +418,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* FAQs Section - Enhanced */}
+          {/* FAQs */}
           <div className="mt-16">
             <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-shadow duration-300">
               <h2 className="text-3xl font-heading font-bold text-primary text-center mb-4">
@@ -474,7 +469,6 @@ export default function ContactPage() {
                 })}
               </div>
 
-              {/* Still have questions? - Enhanced */}
               <div className="mt-8 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-xl text-center">
                 <p className="text-gray-700 mb-4 font-medium">
                   Still have questions? We're here to help!
@@ -495,28 +489,19 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Google Map - Enhanced */}
+          {/* Map */}
           <div className="mt-12">
             <div className="bg-gray-100 rounded-2xl overflow-hidden h-[400px] relative shadow-md hover:shadow-xl transition-shadow duration-300">
-              {MAP_EMBED_URL ? (
-                <iframe
-                  title="E-Springs Junior School Location Map"
-                  src={MAP_EMBED_URL}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0"
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full text-gray-500 flex-col gap-2">
-                  <MapPin className="w-12 h-12 text-gray-300" />
-                  <p>Map location coming soon</p>
-                </div>
-              )}
-              
-              {/* Map overlay label */}
+              <iframe
+                title="E-Springs Junior School Location Map"
+                src={MAP_EMBED_URL}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0"
+              />
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg">
                 <p className="text-xs font-semibold text-primary">📍 {CONTACT_INFO.address}</p>
               </div>
@@ -526,9 +511,9 @@ export default function ContactPage() {
               <Button
                 variant="outline"
                 className="flex-1 border-primary text-primary hover:bg-primary hover:text-white transition"
-                onClick={() => window.open(`https://maps.google.com/?q=${encodeURIComponent(CONTACT_INFO.address)}`, '_blank')}
+                onClick={() => window.open('https://www.google.com/maps?q=ESPRINGS+SCHOOL+Nairobi', '_blank')}
               >
-                <MapPin size={18} className="mr-2" aria-hidden="true" />
+                <MapPin size={18} className="mr-2" />
                 Get Directions
               </Button>
               <Link href="/admissions" className="flex-1">
@@ -541,30 +526,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Add CSS animations to globals.css */}
       <style jsx>{`
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in {
           animation: fadeIn 0.3s ease-out forwards;
         }
         @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in-up {
           animation: fadeInUp 0.8s ease-out forwards;
