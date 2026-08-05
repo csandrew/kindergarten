@@ -1,73 +1,60 @@
-// src/app/layout.tsx
+// app/layout.tsx
 import type { Metadata, Viewport } from 'next'
-import { Inter, Poppins, Marcellus } from 'next/font/google'
 import Script from 'next/script'
+
+// LOCAL FONTS - No Google Fonts network calls
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
+import '@fontsource/inter/800.css'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/600.css'
+import '@fontsource/poppins/700.css'
+import '@fontsource/poppins/800.css'
+import '@fontsource/marcellus/400.css'
 
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import './globals.css'
 
-// Font Configuration
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
-
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap'
-})
-
-const marcellus = Marcellus({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-marcellus',
-  display: 'swap'
-})
-
-// Metadata Configuration
 export const metadata: Metadata = {
-  metadataBase: new URL('https://espringsjuniorprimary.ac.ke'),
+  metadataBase: new URL('https://espringsschools.com'),
   title: {
-    default: 'E-Springs Junior School',
-    template: '%s | E-Springs Junior School',
+    default: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+    template: '%s | E-Springs Schools',
   },
-  description: 'Premier kindergarten in Umoja One offering play-based learning for children.',
-  keywords: 'kindergarten, preschool, daycare, early childhood education, Nairobi, E-Springs Junior School',
-  authors: [{ name: 'E-Springs Junior School' }],
+  description: 'E-Springs Schools offers quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi. Holistic development for every child.',
+  keywords: 'kindergarten, primary school, junior secondary, preschool, daycare, early childhood education, primary education, secondary education, CBC curriculum, holistic education, Nairobi schools, Umoja, Embakasi West, E-Springs Schools, E-Springs Kindergarten, E-Springs Primary School, E-Springs Junior Secondary, E-Springs Nairobi, E-Springs Kenya, playgroup, PP1, PP2, Grade 1, Grade 2, Grade 3, Grade 4, Grade 5, Grade 6, Grade 7, Grade 8',
+  authors: [{ name: 'E-Springs Schools' }],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'E-Springs Junior School',
-    description: 'Premier kindergarten in Umoja One offering play-based learning for children aged 2-6 years.',
-    url: 'https://espringsjuniorprimary.ac.ke',
-    siteName: 'E-Springs Junior School',
+    title: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+    description: 'Quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi. Enroll your child today for holistic development.',
+    url: 'https://espringsschools.com',
+    siteName: 'E-Springs Schools',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'E-Springs Junior School',
+        alt: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
       },
     ],
     locale: 'en_KE',
     type: 'website',
   },
-
-
   twitter: {
     card: 'summary_large_image',
-    title: 'E-Springs Junior School',
-    description: 'Premier kindergarten in Umoja One offering play-based learning for children aged 2-6 years.',
+    title: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+    description: 'Quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi.',
     images: ['/images/twitter-image.jpg'],
   },
-
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',
@@ -96,12 +83,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable} ${marcellus.variable} scroll-smooth`}
+      className="scroll-smooth"
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/*  Single favicon reference */}
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </head>

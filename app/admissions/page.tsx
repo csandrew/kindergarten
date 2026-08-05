@@ -7,6 +7,20 @@ import {
   Download, ArrowRight, BookOpen, Heart, ListChecks
 } from 'lucide-react'
 
+// Add configuration at the top
+const ADMISSIONS_CONFIG = {
+  intakePeriod: 'Term 1 2027',
+  deadline: '15 January 2027',
+  startingFees: 'KSh 12,000',
+  // Add document URLs as constants
+  documents: {
+    feeStructure: '/documents/fee-structure.pdf',
+    medicalForm: '/documents/medical-form.pdf',
+    applicationForm: '/documents/application-form.pdf',
+    requirements: '/documents/admission-requirements.pdf'
+  }
+}
+
 export default function AdmissionsPage() {
   const steps = [
     { step: 1, icon: FileText, title: 'Review Requirements', desc: 'Check all admission requirements and download the checklist' },
@@ -20,28 +34,28 @@ export default function AdmissionsPage() {
       name: 'Fee Structure', 
       description: 'Complete fee breakdown for all levels',
       icon: FileText,
-      url: '/documents/fee-structure.pdf',
+      url: ADMISSIONS_CONFIG.documents.feeStructure,
       color: 'from-blue-500 to-blue-600'
     },
     { 
       name: 'Medical Form', 
       description: 'Required medical information form',
       icon: Heart,
-      url: '/documents/medical-form.pdf',
+      url: ADMISSIONS_CONFIG.documents.medicalForm,
       color: 'from-red-500 to-red-600'
     },
     { 
       name: 'Application Form', 
       description: 'School enrollment application form',
       icon: BookOpen,
-      url: '/documents/application-form.pdf',
+      url: ADMISSIONS_CONFIG.documents.applicationForm,
       color: 'from-purple-500 to-purple-600'
     },
     { 
       name: 'Admission Requirements', 
       description: 'Complete checklist of requirements',
       icon: ListChecks,
-      url: '/documents/admission-requirements.pdf',
+      url: ADMISSIONS_CONFIG.documents.requirements,
       color: 'from-green-500 to-green-600'
     },
   ]
@@ -65,6 +79,16 @@ export default function AdmissionsPage() {
           <p className="text-lg text-gray-700 leading-relaxed">
             Choosing the right school for a child is one of the most important decisions any parent or guardian will make. 
             At E-Springs, we welcome children from diverse backgrounds and are committed to helping every learner thrive.
+          </p>
+        </div>
+      </section>
+
+      {/* Intake / Deadline Banner - REINSTATED */}
+      <section className="py-8 bg-primary/5 border-y border-primary/10">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-primary font-semibold flex items-center justify-center gap-2 flex-wrap">
+            <Calendar size={20} aria-hidden="true" />
+            <span>{ADMISSIONS_CONFIG.intakePeriod} intake now open — closes {ADMISSIONS_CONFIG.deadline}</span>
           </p>
         </div>
       </section>
@@ -98,9 +122,14 @@ export default function AdmissionsPage() {
             <h3 className="text-2xl font-heading font-bold text-primary text-center mb-8">
               Download Admission Documents
             </h3>
-            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-center mb-2 max-w-2xl mx-auto">
               Download all the documents you need to complete the admission process.
               Please fill them out and submit along with the required documents.
+            </p>
+            
+            {/* Fee teaser - REINSTATED */}
+            <p className="text-gray-500 text-center text-sm mb-10">
+              Fees start from {ADMISSIONS_CONFIG.startingFees}/term — see full breakdown below
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -118,19 +147,24 @@ export default function AdmissionsPage() {
                   <p className="text-gray-600 text-sm mb-4">
                     {doc.description}
                   </p>
-                  <button
-                    onClick={() => window.open(doc.url, '_blank')}
+                  
+                  {/* FIXED: Using anchor tag instead of button */}
+                  <a
+                    href={doc.url}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full bg-primary hover:bg-primary/80 text-white px-4 py-2.5 rounded-xl font-semibold transition flex items-center justify-center gap-2 group"
                   >
                     <Download size={18} />
                     Download {doc.name}
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
 
-            {/* Contact Admissions Team */}
-            {/*<div className="mt-10 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-2xl text-center">
+            {/* Contact Admissions Team - UNCOMMENTED */}
+            <div className="mt-10 p-6 bg-gradient-to-r from-secondary/20 to-primary/10 rounded-2xl text-center">
               <p className="text-gray-700 mb-4 font-medium">
                 Have more questions about admissions?
               </p>
@@ -139,7 +173,7 @@ export default function AdmissionsPage() {
                   Contact Admissions Team <ArrowRight size={18} className="ml-2" />
                 </Button>
               </Link>
-            </div> */}
+            </div>
           </div>
 
           {/* Call to Action */}
@@ -150,13 +184,18 @@ export default function AdmissionsPage() {
             <p className="text-white/90 max-w-2xl mx-auto mb-6">
               Download the application form, complete it, and submit it with the required documents to secure your child's spot.
             </p>
-            <button
-              onClick={() => window.open('/documents/application-form.pdf', '_blank')}
-              className="bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-3 mx-auto shadow-lg hover:shadow-xl"
+            
+            {/* FIXED: Using anchor tag */}
+            <a
+              href={ADMISSIONS_CONFIG.documents.applicationForm}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-primary hover:bg-white/90 px-8 py-3 rounded-xl font-semibold transition flex items-center justify-center gap-3 mx-auto shadow-lg hover:shadow-xl w-fit"
             >
               <Download size={20} />
               Download Application Form
-            </button>
+            </a>
           </div>
         </div>
       </section>

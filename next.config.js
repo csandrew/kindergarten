@@ -1,27 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', 
-  
+  output: 'standalone',
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
-    // Disable image optimization if you have issues with sharp
-    // unoptimized: true, // Uncomment if sharp causes problems
+    unoptimized: true,
   },
-  
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  
+  reactStrictMode: true,
+  poweredByHeader: false,
   typescript: {
     ignoreBuildErrors: true,
   },
-  
-  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 module.exports = nextConfig

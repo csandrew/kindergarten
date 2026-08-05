@@ -1,17 +1,16 @@
-// src/components/ui/FormInput.tsx
 'use client'
 import { forwardRef, InputHTMLAttributes, useState, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { Eye, EyeOff, AlertCircle, CheckCircle } from 'lucide-react'
 
-interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface FormInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   label?: string
   error?: string
   success?: string
   icon?: ReactNode
   iconPosition?: 'left' | 'right'
   variant?: 'default' | 'outline' | 'filled'
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg'  // ← This now works because we omitted the native 'size'
   required?: boolean
   showPasswordToggle?: boolean
   className?: string

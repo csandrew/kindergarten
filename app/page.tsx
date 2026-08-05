@@ -37,7 +37,7 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* ===== INTRODUCTION - NEW ===== */}
+      {/* ===== INTRODUCTION ===== */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <p className="text-lg text-gray-700 leading-relaxed">
