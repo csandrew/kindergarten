@@ -71,7 +71,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-heading font-bold text-white">E-Springs</h3>
-                <p className="text-sm text-gray-300">Junior School</p>
+                <p className="text-sm text-gray-300"> School</p>
               </div>
             </div>
             
@@ -196,7 +196,7 @@ export default function Footer() {
         <div className="border-t border-gray-700/50 pt-8 text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-center md:text-left">
-              &copy; {currentYear} E-Springs Junior School. All rights reserved.
+              &copy; {currentYear} E-Springs School. All rights reserved.
             </p>
             
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">

@@ -8,7 +8,7 @@ import { Menu, X, Home, Info, BookOpen, FileText, Phone } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 import { Button } from '@/components/ui/Button'
 
-// Navigation items with icons for mobile
+
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'About Us', href: '/about', icon: Info },
@@ -22,7 +22,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  // Handle scroll with throttling for better performance
+  
   useEffect(() => {
     let ticking = false
     
@@ -90,11 +90,11 @@ export default function Header() {
               href="/" 
               onClick={handleLogoClick}
               className="flex items-center gap-3 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-secondary rounded-lg transition-opacity hover:opacity-80"
-              aria-label="E-Springs Junior School - Home"
+              aria-label="E-Springs School - Home"
             >
               <Image
                 src="/images/logo.png"
-                alt="E-Springs Junior School Logo"
+                alt="E-Springs School Logo"
                 width={64}
                 height={64}
                 className="h-14 w-auto"
@@ -109,7 +109,7 @@ export default function Header() {
                 <span className={`block text-xs transition-colors duration-300 ${
                   isScrolled ? 'text-gray-900' : 'text-gray-900'
                 }`}>
-                  Junior School
+                  School
                 </span>
               </div>
             </Link>

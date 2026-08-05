@@ -123,20 +123,7 @@ export default function MobileMenu({ isOpen, onClose, navItems, isActive }: Mobi
             onClick={onClose}
             className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-secondary rounded-md"
           >
-            {/*<div className="relative w-10 h-10">
-              <Image
-                src="/images/logo.png"
-                alt="E-Springs Junior School"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div>
-              <span className="font-heading font-bold text-primary text-sm block">
-                E-Springs
-              </span>
-              <span className="text-xs text-gray-500">Junior School</span>
-            </div> */}
+           
           </Link> 
           
           <button

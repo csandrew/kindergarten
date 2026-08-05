@@ -35,12 +35,7 @@ export default function AboutPage() {
     },
   ]
 
-  const stats = [
-    { number: '500+', label: 'Students Enrolled' },
-    { number: '50+', label: 'Qualified Teachers' },
-    { number: '15+', label: 'Years of Excellence' },
-    { number: '100%', label: 'Parent Satisfaction' },
-  ]
+ 
 
   return (
     <main className="pt-24">
@@ -66,20 +61,7 @@ export default function AboutPage() {
       {/* Main Content */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
-            {stats.map((stat, idx) => (
-              <div 
-                key={idx}
-                className="bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          
 
           {/* About Content with Glass Effect */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -219,7 +201,7 @@ export default function AboutPage() {
               
               <div className="pt-4 border-t border-gray-200">
                 <p className="font-heading font-bold text-primary text-lg">Dr. Mary Pricilla</p>
-                <p className="text-sm text-gray-500">Director, E-Springs Junior School</p>
+                <p className="text-sm text-gray-500">Director, E-Springs School</p>
                 <div className="flex items-center gap-2 mt-2">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -228,7 +210,7 @@ export default function AboutPage() {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500">5+ Years of Excellence</span>
+                  <span className="text-sm text-gray-500">15+ Years of Excellence</span>
                 </div>
               </div>
             </div>

@@ -23,10 +23,10 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://espringsschools.com'),
   title: {
-    default: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+    default: 'E-Springs School - Kindergarten, Primary & Junior Secondary',
     template: '%s | E-Springs Schools',
   },
-  description: 'E-Springs Schools offers quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi. Holistic development for every child.',
+  description: 'E-Springs School offers quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi. Holistic development for every child.',
   keywords: 'kindergarten, primary school, junior secondary, preschool, daycare, early childhood education, primary education, secondary education, CBC curriculum, holistic education, Nairobi schools, Umoja, Embakasi West, E-Springs Schools, E-Springs Kindergarten, E-Springs Primary School, E-Springs Junior Secondary, E-Springs Nairobi, E-Springs Kenya, playgroup, PP1, PP2, Grade 1, Grade 2, Grade 3, Grade 4, Grade 5, Grade 6, Grade 7, Grade 8',
   authors: [{ name: 'E-Springs Schools' }],
   robots: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+    title: 'E-Springs School - Kindergarten, Primary & Junior Secondary',
     description: 'Quality education from Kindergarten through Primary School (Grade 1-6) and Junior Secondary (Grade 7-8) in Umoja, Embakasi West, Nairobi. Enroll your child today for holistic development.',
     url: 'https://espringsschools.com',
     siteName: 'E-Springs Schools',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'E-Springs Schools - Kindergarten, Primary & Junior Secondary',
+        alt: 'E-Springs School - Kindergarten, Primary & Junior Secondary',
       },
     ],
     locale: 'en_KE',
